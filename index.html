@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>First Car Guide: 12 Compact &amp; Reliable City Cars</title>
+<title>First Car Guide: 20 Compact City Cars (Yambol &amp; Bulgaria)</title>
 <style>
   :root {
     --bg: #f8fafc;
@@ -13,8 +13,14 @@
     --subtle: #64748b;
     --border: #e2e8f0;
     --accent: #0f766e;
+    --accent-hover: #115e59;
     --accent-light: #f0fdfa;
     --accent-border: #99f6e4;
+    --blue: #0369a1;
+    --blue-bg: #f0f9ff;
+    --blue-border: #bae6fd;
+    --rose: #e11d48;
+    --rose-light: #fff1f2;
     --amber-bg: #fffbeb;
     --amber-border: #fde68a;
     --amber-text: #92400e;
@@ -26,12 +32,12 @@
     background: var(--bg);
     color: var(--text);
     line-height: 1.55;
-    padding-bottom: 90px;
+    padding-bottom: 96px;
   }
   header {
     background: linear-gradient(135deg, #0f172a 0%, #134e4a 100%);
     color: #fff;
-    padding: 44px 20px 38px;
+    padding: 44px 20px 40px;
     text-align: center;
   }
   .badge {
@@ -53,16 +59,141 @@
     margin-bottom: 10px;
   }
   header p {
-    max-width: 650px;
+    max-width: 680px;
     margin: 0 auto;
     color: #cbd5e1;
     font-size: 15px;
   }
   .container {
-    max-width: 1180px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 24px 18px;
   }
+
+  /* Match Wizard */
+  .wizard-card {
+    background: var(--surface);
+    border: 1px solid var(--accent-border);
+    border-radius: 18px;
+    padding: 20px 22px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow);
+    background-image: linear-gradient(180deg, #f0fdfa 0%, #ffffff 74px);
+  }
+  .wizard-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .wizard-top h2 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #115e59;
+  }
+  .wizard-top p {
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+  .wizard-toggle {
+    background: #fff;
+    border: 1px solid var(--accent-border);
+    color: var(--accent);
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .wizard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .wiz-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--subtle);
+    margin-bottom: 6px;
+  }
+  .wiz-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .wiz-btn {
+    border: 1px solid var(--border);
+    background: #f8fafc;
+    color: var(--muted);
+    padding: 7px 11px;
+    border-radius: 9px;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .wiz-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .wiz-btn.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+  .wiz-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--accent-border);
+  }
+  .wiz-match {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .wiz-match-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+  .wiz-rank {
+    font-size: 11px;
+    font-weight: 800;
+    background: var(--accent);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+  .wiz-match strong { font-size: 15px; }
+  .wiz-match p { font-size: 12.5px; color: var(--muted); }
+  .wiz-match-links {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 4px;
+  }
+  .wiz-match button {
+    background: transparent;
+    border: none;
+    color: var(--accent);
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 2px 0;
+  }
+  .wiz-match button.yambol-mini { color: var(--blue); }
+
+  /* Controls */
   .controls {
     display: flex;
     flex-wrap: wrap;
@@ -79,13 +210,13 @@
   .tabs {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 7px;
   }
   .tab {
     border: 1px solid var(--border);
     background: #f8fafc;
     color: var(--muted);
-    padding: 8px 14px;
+    padding: 8px 13px;
     border-radius: 999px;
     font-size: 13px;
     font-weight: 600;
@@ -98,24 +229,44 @@
     color: #fff;
     border-color: var(--accent);
   }
-  .search-box {
-    flex: 1 1 220px;
-    max-width: 280px;
+  .tab.fav-tab.active {
+    background: var(--rose);
+    border-color: var(--rose);
   }
-  .search-box input {
-    width: 100%;
-    padding: 9px 14px;
+  .right-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    flex: 1 1 320px;
+    justify-content: flex-end;
+  }
+  .sort-select, .search-input {
+    padding: 9px 12px;
     border-radius: 10px;
     border: 1px solid var(--border);
-    font-size: 14px;
+    font-size: 13.5px;
+    background: #fff;
+    color: var(--text);
     outline: none;
   }
-  .search-box input:focus { border-color: var(--accent); }
+  .sort-select:focus, .search-input:focus { border-color: var(--accent); }
+  .search-input { width: 200px; max-width: 100%; }
 
+  /* Grid & Cards */
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     gap: 22px;
+  }
+  .empty-state {
+    grid-column: 1 / -1;
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: 16px;
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--muted);
   }
   .card {
     background: var(--surface);
@@ -172,39 +323,88 @@
     border-radius: 8px;
     backdrop-filter: blur(4px);
   }
-  .style-pill {
+  .price-pill {
     position: absolute;
-    top: 12px;
-    right: 12px;
-    background: rgba(255, 255, 255, 0.92);
+    bottom: 12px;
+    left: 12px;
+    background: rgba(255, 255, 255, 0.94);
     color: #0f172a;
-    font-size: 11px;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: 800;
     padding: 4px 10px;
     border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   }
+  .safety-pill {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(15, 23, 42, 0.78);
+    color: #fde68a;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 7px;
+  }
+  .fav-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.94);
+    color: #64748b;
+    font-size: 19px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: transform 0.15s ease, color 0.15s ease;
+  }
+  .fav-btn:hover { transform: scale(1.08); }
+  .fav-btn.active { color: var(--rose); background: var(--rose-light); }
+
   .card-body {
     padding: 18px;
     display: flex;
     flex-direction: column;
     flex: 1;
   }
+  .card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 3px;
+  }
   .card-title {
     font-size: 20px;
     font-weight: 800;
-    margin-bottom: 4px;
     color: var(--text);
+  }
+  .style-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--subtle);
+    background: #f1f5f9;
+    padding: 3px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
   }
   .card-sub {
     font-size: 13px;
     color: var(--accent);
     font-weight: 600;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
   .why-text {
-    font-size: 14px;
+    font-size: 13.6px;
     color: var(--muted);
-    margin-bottom: 14px;
+    margin-bottom: 13px;
   }
   .specs {
     display: grid;
@@ -214,13 +414,13 @@
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 10px 12px;
-    margin-bottom: 14px;
-    font-size: 12.5px;
+    margin-bottom: 12px;
+    font-size: 12.3px;
   }
   .spec-item span {
     display: block;
     color: var(--subtle);
-    font-size: 11px;
+    font-size: 10.5px;
     text-transform: uppercase;
     letter-spacing: 0.03em;
   }
@@ -229,44 +429,56 @@
     background: var(--accent-light);
     border: 1px solid var(--accent-border);
     color: #115e59;
-    padding: 9px 12px;
+    padding: 8px 11px;
     border-radius: 10px;
-    font-size: 12.5px;
-    margin-bottom: 16px;
+    font-size: 12.2px;
+    margin-bottom: 14px;
   }
   .card-actions {
     margin-top: auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 8px;
   }
   .btn {
-    flex: 1;
     text-align: center;
-    padding: 9px 12px;
+    padding: 9px 10px;
     border-radius: 10px;
-    font-size: 13px;
+    font-size: 12.6px;
     font-weight: 700;
     cursor: pointer;
     text-decoration: none;
     border: 1px solid var(--border);
     transition: all 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
   }
+  .btn-yambol {
+    background: var(--blue-bg);
+    color: var(--blue);
+    border-color: var(--blue-border);
+    grid-column: 1 / -1;
+  }
+  .btn-yambol:hover { background: #e0f2fe; }
+  .btn-details {
+    background: #0f172a;
+    color: #fff;
+    border-color: #0f172a;
+  }
+  .btn-details:hover { background: #1e293b; }
   .btn-compare {
     background: #fff;
     color: var(--text);
   }
   .btn-compare.selected {
-    background: #0f172a;
+    background: #0f766e;
     color: #fff;
-    border-color: #0f172a;
+    border-color: #0f766e;
   }
-  .btn-mobile {
-    background: var(--accent);
-    color: #fff;
-    border-color: var(--accent);
-  }
-  .btn-mobile:hover { background: #115e59; }
 
+  /* Checklist & Glossary */
   .checklist-section {
     margin-top: 38px;
     background: var(--surface);
@@ -289,6 +501,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 14px;
+    margin-bottom: 22px;
   }
   .check-card {
     background: var(--amber-bg);
@@ -305,7 +518,27 @@
     font-size: 13px;
     color: #78350f;
   }
+  .glossary-box {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 18px;
+  }
+  .glossary-box h3 {
+    font-size: 15.5px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  .glossary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 8px 14px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .glossary-grid strong { color: var(--text); }
 
+  /* Compare Bar */
   .compare-bar {
     position: fixed;
     bottom: 16px;
@@ -340,10 +573,11 @@
     font-weight: 600;
   }
 
+  /* Modals */
   .modal-backdrop {
     position: fixed;
     inset: 0;
-    background: rgba(15, 23, 42, 0.65);
+    background: rgba(15, 23, 42, 0.68);
     display: none;
     align-items: center;
     justify-content: center;
@@ -354,17 +588,20 @@
   .modal {
     background: #fff;
     border-radius: 18px;
-    max-width: 860px;
+    max-width: 880px;
     width: 100%;
-    max-height: 88vh;
+    max-height: 90vh;
     overflow: auto;
     padding: 22px;
   }
+  .detail-modal { max-width: 740px; }
+  .nearby-modal { max-width: 560px; }
   .modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
+    gap: 10px;
   }
   .modal-header h3 { font-size: 20px; font-weight: 800; }
   .close-modal {
@@ -376,11 +613,175 @@
     font-size: 18px;
     cursor: pointer;
     font-weight: 700;
+    flex-shrink: 0;
   }
+
+  /* Nearby Yambol Modal */
+  .nearby-intro {
+    font-size: 13.5px;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .city-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 14px;
+  }
+  .city-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: #f8fafc;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.15s ease;
+  }
+  .city-link:hover {
+    border-color: var(--blue);
+    background: var(--blue-bg);
+    transform: translateX(2px);
+  }
+  .city-link.primary {
+    background: var(--blue-bg);
+    border-color: var(--blue-border);
+  }
+  .city-meta strong { display: block; font-size: 14.5px; }
+  .city-meta span { font-size: 12px; color: var(--subtle); }
+  .city-go {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: var(--blue);
+    white-space: nowrap;
+  }
+  .all-bg-link {
+    display: block;
+    text-align: center;
+    padding: 11px;
+    border-radius: 10px;
+    background: #0f172a;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .all-bg-link:hover { background: #1e293b; }
+
+  /* Detail Modal */
+  .detail-hero {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 16px;
+    background: #e2e8f0;
+  }
+  .score-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+  }
+  .score-item-top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12.5px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  .bar-track {
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 999px;
+  }
+  .detail-specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .detail-spec-box {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .detail-spec-box span {
+    display: block;
+    font-size: 10.5px;
+    text-transform: uppercase;
+    color: var(--subtle);
+  }
+  .detail-spec-box strong { font-size: 13.3px; }
+  .cost-strip {
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 12px;
+    padding: 13px 15px;
+    margin-bottom: 16px;
+  }
+  .cost-strip h4 {
+    font-size: 13.5px;
+    color: #0369a1;
+    margin-bottom: 8px;
+  }
+  .cost-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 8px;
+    font-size: 12.8px;
+  }
+  .cost-items span { display: block; color: var(--subtle); font-size: 11px; }
+  .cost-items strong { color: var(--text); }
+  .pros-cons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+  .pc-box {
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 13.3px;
+  }
+  .pc-box.pros { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .pc-box.cons { background: #fef2f2; border: 1px solid #fecaca; }
+  .pc-box h4 { font-size: 14px; margin-bottom: 8px; }
+  .pc-box ul { padding-left: 18px; }
+  .pc-box li { margin-bottom: 5px; }
+  .inspect-box {
+    background: var(--amber-bg);
+    border: 1px solid var(--amber-border);
+    color: #78350f;
+    border-radius: 12px;
+    padding: 13px 15px;
+    font-size: 13.3px;
+    margin-bottom: 16px;
+  }
+  .detail-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .detail-footer .btn { flex: 1; min-width: 150px; }
+
   table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 13.5px;
+    font-size: 13px;
   }
   th, td {
     border: 1px solid var(--border);
@@ -388,7 +789,7 @@
     text-align: left;
     vertical-align: top;
   }
-  th { background: #f8fafc; font-weight: 700; width: 22%; }
+  th { background: #f8fafc; font-weight: 700; width: 20%; }
   .modal-thumb {
     width: 100%;
     max-width: 180px;
@@ -403,61 +804,148 @@
 <body>
 
 <header>
-  <div class="badge">Bulgaria Used Market &bull; Beginner Friendly</div>
-  <h1>First Car Guide: 12 Compact &amp; Reliable City Cars</h1>
-  <p>Easy to park, low running costs, great visibility, and proven reliability — curated for confident city driving and weekend trips.</p>
+  <div class="badge">Yambol &amp; Bulgaria Market &bull; 20 Beginner-Friendly Picks</div>
+  <h1>First Car Guide: 20 Compact &amp; Reliable City Cars</h1>
+  <p>Easy to park, low annual running costs, clear visibility, and direct Mobile.bg searches within ~100 km of Yambol (Yambol, Sliven, Stara Zagora &amp; Burgas).</p>
 </header>
 
 <div class="container">
+  <!-- 3-Question Car Matcher -->
+  <section class="wizard-card">
+    <div class="wizard-top">
+      <div>
+        <h2>Find Your Best Match (3 Quick Questions)</h2>
+        <p>Pick your preferences below to see the top 3 models tailored to your driving style.</p>
+      </div>
+      <button class="wizard-toggle" id="toggleWizardBtn">Hide Matcher</button>
+    </div>
+    <div id="wizardBody">
+      <div class="wizard-grid">
+        <div class="wiz-group">
+          <label>1. Gearbox Preference</label>
+          <div class="wiz-options" data-q="gearbox">
+            <button class="wiz-btn active" data-val="any">Either</button>
+            <button class="wiz-btn" data-val="manual">Manual</button>
+            <button class="wiz-btn" data-val="auto">Automatic</button>
+          </div>
+        </div>
+        <div class="wiz-group">
+          <label>2. Top Priority</label>
+          <div class="wiz-options" data-q="priority">
+            <button class="wiz-btn active" data-val="park">Easiest Parking</button>
+            <button class="wiz-btn" data-val="visibility">High Seat &amp; View</button>
+            <button class="wiz-btn" data-val="reliability">Max Reliability</button>
+            <button class="wiz-btn" data-val="budget">Lowest Budget</button>
+          </div>
+        </div>
+        <div class="wiz-group">
+          <label>3. Driving Mix</label>
+          <div class="wiz-options" data-q="usage">
+            <button class="wiz-btn active" data-val="city">Mostly City</button>
+            <button class="wiz-btn" data-val="mixed">City + Weekend Trips</button>
+          </div>
+        </div>
+      </div>
+      <div class="wiz-results" id="wizardResults"></div>
+    </div>
+  </section>
+
+  <!-- Filter, Sort & Search -->
   <div class="controls">
     <div class="tabs" id="filterTabs">
-      <button class="tab active" data-filter="all">All 12 Cars</button>
+      <button class="tab active" data-filter="all">All 20 Cars</button>
       <button class="tab" data-filter="tall">Tall &amp; Easy Visibility</button>
       <button class="tab" data-filter="compact">Compact &amp; Agile</button>
       <button class="tab" data-filter="auto">Best Automatics</button>
+      <button class="tab fav-tab" data-filter="favorites" id="favTabBtn">♥ Favorites (0)</button>
     </div>
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Search model or feature..." />
+    <div class="right-controls">
+      <select class="sort-select" id="sortSelect" aria-label="Sort cars">
+        <option value="default">Sort: Recommended</option>
+        <option value="park">Shortest / Easiest Park</option>
+        <option value="fuel">Lowest Fuel Economy</option>
+        <option value="price">Most Budget-Friendly (€)</option>
+        <option value="reliability">Highest Reliability</option>
+      </select>
+      <input type="text" class="search-input" id="searchInput" placeholder="Search model or feature..." />
     </div>
   </div>
 
+  <!-- Car Cards -->
   <div class="grid" id="carGrid"></div>
 
+  <!-- Bulgaria Checklist & Terms -->
   <section class="checklist-section">
-    <h2>Quick Buying Checklist for Bulgaria (Mobile.bg / Cars.bg)</h2>
-    <p>Four practical checks before finalizing any used compact car in Bulgaria:</p>
+    <h2>Smart Buyer's Checklist Around Yambol &amp; Bulgaria</h2>
+    <p>Key checks when viewing cars in Yambol, Sliven (~28 km), Stara Zagora (~82 km), or Burgas (~92 km):</p>
     <div class="check-grid">
       <div class="check-card">
-        <h3>1. Underbody &amp; Arch Rust ("Nov vnos")</h3>
-        <p>Many imports come from Austria, Germany, or Switzerland where heavy winter road salt is used. Inspect rear wheel arches and sills carefully.</p>
+        <h3>1. Underbody &amp; Arch Rust ("Нов внос")</h3>
+        <p>Many imports come from Austria, Germany, or Switzerland where winter road salt is heavy. Check rear wheel arches, sills, and exhaust lines carefully.</p>
       </div>
       <div class="check-card">
         <h3>2. Gearbox Selection</h3>
-        <p>If buying an automatic, prioritize <strong>Mazda 2, Nissan Micra K12, or Hyundai i20</strong>. Avoid early single-clutch semi-autos (Toyota MMT / Honda i-SHIFT).</p>
+        <p>For an automatic, prioritize <strong>Mazda 2, Nissan Micra K12, Hyundai i10/i20, Opel Corsa D (1.4 Auto), or Honda Jazz (CVT/Auto)</strong>. Avoid single-clutch semi-autos (MMT, i-SHIFT, Easytronic, Dualogic, Allshift).</p>
       </div>
       <div class="check-card">
-        <h3>3. Annual Tax &amp; GO Insurance</h3>
-        <p>Petrol engines under 1.4L (70–95 hp) fall into the lowest municipal road tax and Civil Liability (GO) insurance brackets in Bulgaria.</p>
+        <h3>3. Annual Tax, GO &amp; Vignette</h3>
+        <p>Petrol engines under 1.4L (65–95 hp) get the lowest municipal road tax and GO insurance. Annual BG highway vignette is ~€45–€50/year.</p>
       </div>
       <div class="check-card">
-        <h3>4. Valid GTP &amp; Service Basics</h3>
-        <p>For cars already registered in Bulgaria, verify valid <strong>GTP</strong> (annual technical inspection) and check tire date codes for winter readiness.</p>
+        <h3>4. Valid GTP &amp; First Service Budget</h3>
+        <p>Verify valid <strong>ГТП (GTP)</strong> on registered cars, and always keep ~€250–€350 aside for fresh oil, filters, and a quick mechanic check after buying.</p>
+      </div>
+    </div>
+
+    <div class="glossary-box">
+      <h3>Quick Mobile.bg Listing Terms Cheat Sheet</h3>
+      <div class="glossary-grid">
+        <div><strong>Нов внос:</strong> Newly imported (needs KAT registration)</div>
+        <div><strong>Обслужен:</strong> Recently serviced (ask for receipts)</div>
+        <div><strong>ГТП (GTP):</strong> Annual technical inspection</div>
+        <div><strong>ГО (GO):</strong> Mandatory Civil Liability insurance</div>
+        <div><strong>Бензин / Газ:</strong> Petrol / LPG gas system</div>
+        <div><strong>Ръчна / Автоматик:</strong> Manual / Automatic gearbox</div>
       </div>
     </div>
   </section>
 </div>
 
+<!-- Floating Compare Bar -->
 <div class="compare-bar" id="compareBar">
   <span id="compareCount">0 cars selected</span>
   <button id="openCompareBtn">Compare Side-by-Side</button>
   <button class="clear-btn" id="clearCompareBtn">Clear</button>
 </div>
 
+<!-- Nearby Yambol (~100 km) Listings Modal -->
+<div class="modal-backdrop" id="nearbyModal">
+  <div class="modal nearby-modal">
+    <div class="modal-header">
+      <h3 id="nearbyTitle">Listings Near Yambol (~100 km)</h3>
+      <button class="close-modal" id="closeNearbyBtn">&times;</button>
+    </div>
+    <div id="nearbyBody"></div>
+  </div>
+</div>
+
+<!-- Full Details Modal -->
+<div class="modal-backdrop" id="detailModal">
+  <div class="modal detail-modal">
+    <div class="modal-header">
+      <h3 id="detailTitle">Car Details</h3>
+      <button class="close-modal" id="closeDetailBtn">&times;</button>
+    </div>
+    <div id="detailBody"></div>
+  </div>
+</div>
+
+<!-- Side-by-Side Comparison Modal -->
 <div class="modal-backdrop" id="compareModal">
   <div class="modal">
     <div class="modal-header">
       <h3>Side-by-Side Comparison</h3>
-      <button class="close-modal" id="closeModalBtn">&times;</button>
+      <button class="close-modal" id="closeCompareBtn">&times;</button>
     </div>
     <div id="compareTableWrap"></div>
   </div>
@@ -466,220 +954,1121 @@
 <script>
 const cars = [
   {
-    id: "mazda2",
-    name: "Mazda 2",
-    years: "2008–2012",
-    style: "Agile Hatchback",
-    categories: ["compact", "auto"],
-    subtitle: "Lightweight, crisp steering & easy corner visibility",
-    why: "One of the easiest hatchbacks to place in tight city streets and parallel parking spots. Light controls and reliable Japanese engineering make it stress-free from day one.",
-    engine: "1.3L / 1.5L Petrol",
-    gearbox: "5-Speed Manual / 4-Speed Auto",
-    length: "3,900 mm",
-    taxTier: "Low (75–103 hp)",
-    tip: "Both manual and traditional 4-speed automatic versions are durable and smooth.",
-    img: "https://upload.wikimedia.org/wikipedia/commons/5/53/2010_Mazda_2_%28DE_Series_2%29_Neo_5-door_hatchback_01.jpg",
-    fallbackImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgogbdvuykYTRlbdcxmIPnaDxGsIRDzv9d-rvZehNaA111ExUKgtzQzxiW&s=10",
-    mobileUrl: "https://www.mobile.bg/obiavi/avtomobili-dzhipove/mazda/2/ot-2008/do-2012"
+    "id": "mazda2",
+    "name": "Mazda 2",
+    "brandSlug": "mazda",
+    "modelSlug": "2",
+    "yearFrom": 2008,
+    "yearTo": 2012,
+    "years": "2008–2012",
+    "style": "Agile Hatchback",
+    "categories": [
+      "compact",
+      "auto"
+    ],
+    "subtitle": "Lightweight, crisp steering & easy corner visibility",
+    "why": "One of the easiest hatchbacks to place in tight city streets and parallel parking spots. Light controls and reliable Japanese engineering make it stress-free from day one.",
+    "engine": "1.3L / 1.5L Petrol",
+    "timing": "Timing Chain (low maintenance)",
+    "gearbox": "5-Speed Manual / 4-Speed Auto",
+    "autoGood": true,
+    "lengthMm": 3900,
+    "length": "3,900 mm",
+    "turningCircle": "9.8 m (easy U-turns)",
+    "safety": "5★ Euro NCAP",
+    "fuelAvg": 5.4,
+    "fuelDetail": "6.8 L city / 4.6 L hwy",
+    "trunk": "250 L (787 L folded)",
+    "priceMin": 2600,
+    "priceRange": "€2,600 – €4,200",
+    "taxTier": "Low (75–103 hp)",
+    "annualCost": {
+      "tax": "€20 – €45 / yr",
+      "insurance": "€145 – €185 / yr",
+      "service": "€90 – €130 / yr"
+    },
+    "scores": {
+      "park": 4.5,
+      "visibility": 4.2,
+      "reliability": 4.8,
+      "cost": 4.4
+    },
+    "pros": [
+      "Very light and predictable steering — builds confidence quickly",
+      "Timing-chain petrol engines rarely need expensive work",
+      "Traditional 4-speed automatic is smooth and dependable"
+    ],
+    "cons": [
+      "Rear seat space is tighter than Honda Jazz or Nissan Note",
+      "Slightly firmer suspension over rough cobblestone roads"
+    ],
+    "check": "Inspect rear wheel arches and underbody for rust on German/Austrian imports, and listen for front suspension knocks over bumps.",
+    "tip": "Both manual and traditional 4-speed automatic versions are durable and smooth.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/5/53/2010_Mazda_2_%28DE_Series_2%29_Neo_5-door_hatchback_01.jpg",
+    "fallbackImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgogbdvuykYTRlbdcxmIPnaDxGsIRDzv9d-rvZehNaA111ExUKgtzQzxiW&s=10"
   },
   {
-    id: "agila",
-    name: "Opel Agila (B)",
-    years: "2008–2012",
-    style: "Tall Micro-MPV",
-    categories: ["tall"],
-    subtitle: "High seating position & panoramic city view",
-    why: "Sits higher than a standard hatchback so you look over traffic easily. Easy to step in and out of, with upright windows that eliminate guesswork when parking.",
-    engine: "1.0L / 1.2L Petrol",
-    gearbox: "5-Speed Manual (4-Auto rare)",
-    length: "3,740 mm",
-    taxTier: "Ultra-Low (65–86 hp)",
-    tip: "Co-developed with Suzuki — uses durable Suzuki petrol engines with timing chains.",
-    img: "https://listing-images.autoscout24.ch/listing/116/20341116/1463998156.JPG?w=1920&q=90",
-    fallbackImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRBjA7dnoGVqL-wJH4dkbpVTSIgJceEQxRltvWsy3Aqbk1_ZU2Y86FPfg&s=10",
-    mobileUrl: "https://www.mobile.bg/obiavi/avtomobili-dzhipove/opel/agila/ot-2008/do-2012"
+    "id": "agila",
+    "name": "Opel Agila (B)",
+    "brandSlug": "opel",
+    "modelSlug": "agila",
+    "yearFrom": 2008,
+    "yearTo": 2012,
+    "years": "2008–2012",
+    "style": "Tall Micro-MPV",
+    "categories": [
+      "tall"
+    ],
+    "subtitle": "High seating position & panoramic city view",
+    "why": "Sits higher than a standard hatchback so you look over traffic easily. Easy to step in and out of, with upright windows that eliminate guesswork when parking.",
+    "engine": "1.0L / 1.2L Petrol",
+    "timing": "Timing Chain (Suzuki engine)",
+    "gearbox": "5-Speed Manual (4-Auto rare)",
+    "autoGood": false,
+    "lengthMm": 3740,
+    "length": "3,740 mm",
+    "turningCircle": "9.6 m (super nimble)",
+    "safety": "4★ Euro NCAP",
+    "fuelAvg": 5.1,
+    "fuelDetail": "6.1 L city / 4.5 L hwy",
+    "trunk": "225 L (1,050 L folded)",
+    "priceMin": 2300,
+    "priceRange": "€2,300 – €3,800",
+    "taxTier": "Ultra-Low (65–86 hp)",
+    "annualCost": {
+      "tax": "€15 – €30 / yr",
+      "insurance": "€135 – €165 / yr",
+      "service": "€80 – €115 / yr"
+    },
+    "scores": {
+      "park": 4.8,
+      "visibility": 4.9,
+      "reliability": 4.6,
+      "cost": 4.8
+    },
+    "pros": [
+      "Commanding upright driving position makes city traffic less intimidating",
+      "Mechanically built by Suzuki with tough timing-chain engines",
+      "Very short length (3.74 m) makes parallel parking effortless"
+    ],
+    "cons": [
+      "Trunk is shallow with the rear seats up (fits groceries, not huge suitcases)",
+      "1.0L 3-cylinder engine feels modest on steep highway climbs — 1.2L is better"
+    ],
+    "check": "Test the 5-speed gearbox in 1st and 2nd gear for smooth engagement (shift cables can stiffen with age) and check AC cooling.",
+    "tip": "Co-developed with Suzuki — prefer the 4-cylinder 1.2L petrol if you plan highway trips.",
+    "img": "https://listing-images.autoscout24.ch/listing/116/20341116/1463998156.JPG?w=1920&q=90",
+    "fallbackImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRBjA7dnoGVqL-wJH4dkbpVTSIgJceEQxRltvWsy3Aqbk1_ZU2Y86FPfg&s=10"
   },
   {
-    id: "jazz",
-    name: "Honda Jazz",
-    years: "2008–2011",
-    style: "Tall Hatchback",
-    categories: ["tall", "auto"],
-    subtitle: "Huge glass area, near-zero blind spots & Magic Seats",
-    why: "Famous for massive front quarter-windows that make intersections and tight turns super clear. Rear Magic Seats fold completely flat for bulky luggage or shopping.",
-    engine: "1.2L / 1.4L i-VTEC Petrol",
-    gearbox: "5-Speed Manual / Full Auto",
-    length: "3,900 mm",
-    taxTier: "Low (90–100 hp)",
-    tip: "Choose manual or full automatic; avoid the jerky i-SHIFT semi-automatic.",
-    img: "https://img-ik.cars.co.za/news-site-za/images/2021/02/Honda-Jazz_2009.jpg",
-    fallbackImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJH_Er3OELSEmogLpAWt1gaE7Wu575uW5Eg5S-Y7BICx_HsdHLvWE2sS1u&s=10",
-    mobileUrl: "https://www.mobile.bg/obiavi/avtomobili-dzhipove/honda/jazz/ot-2008/do-2011"
+    "id": "spark",
+    "name": "Chevrolet Spark (M300)",
+    "brandSlug": "chevrolet",
+    "modelSlug": "spark",
+    "yearFrom": 2009,
+    "yearTo": 2013,
+    "years": "2009–2013",
+    "style": "Ultra-Compact City Car",
+    "categories": [
+      "compact"
+    ],
+    "subtitle": "Budget-friendly, 4-cylinder smoothness & tiny footprint",
+    "why": "Very affordable to buy and insure in Bulgaria, yet offers 5 full doors and smoother 4-cylinder petrol engines than most 3-cylinder rivals in this size.",
+    "engine": "1.0L / 1.2L Petrol (4-Cyl)",
+    "timing": "Timing Chain (1.0 & 1.2)",
+    "gearbox": "5-Speed Manual",
+    "autoGood": false,
+    "lengthMm": 3640,
+    "length": "3,640 mm",
+    "turningCircle": "9.9 m (tight city fit)",
+    "safety": "4★ Euro NCAP",
+    "fuelAvg": 5.1,
+    "fuelDetail": "6.6 L city / 4.2 L hwy",
+    "trunk": "170 L (568 L folded)",
+    "priceMin": 2000,
+    "priceRange": "€2,000 – €3,200",
+    "taxTier": "Ultra-Low (68–81 hp)",
+    "annualCost": {
+      "tax": "€15 – €28 / yr",
+      "insurance": "€130 – €160 / yr",
+      "service": "€75 – €110 / yr"
+    },
+    "scores": {
+      "park": 4.9,
+      "visibility": 4.3,
+      "reliability": 4.3,
+      "cost": 4.9
+    },
+    "pros": [
+      "4-cylinder engines run noticeably quieter and smoother than 3-cylinder city cars",
+      "Tiny 3.64 m footprint squeezes into the tightest city parking spots",
+      "One of the lowest purchase, tax, and GO insurance costs in Bulgaria"
+    ],
+    "cons": [
+      "Compact 170 L trunk is best for daily shopping rather than big luggage",
+      "Interior plastics are basic, though durable and easy to clean"
+    ],
+    "check": "Check the clutch bite point on high-mileage city cars, inspect front stabilizer links, and verify the digital/motorcycle-style speedometer display works cleanly.",
+    "tip": "The 1.2L (81 hp) version feels much livelier outside the city than the 1.0L.",
+    "img": "https://images.contentstack.io/v3/assets/blt1bd0ccbd0b7d1870/blt273a2f9ce0c59748/68a595c4c8a7771dd37caaad/7_d8d7912f9a32a8d-724_f7ae1c7bd6ef983.jpg",
+    "fallbackImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF50278rWZdx0anbR3NtzVVbjsMUPxiSLiQKU2gRRaVPFh6QZbPFnKnVg&s=10"
   },
   {
-    id: "yaris",
-    name: "Toyota Yaris",
-    years: "2007–2011",
-    style: "Compact Hatchback",
-    categories: ["compact"],
-    subtitle: "Bulletproof reliability & tiny turning circle",
-    why: "The definition of a worry-free first car. Feather-light steering and a tight turning radius make U-turns and tight city parking effortless.",
-    engine: "1.0L / 1.33L Petrol",
-    gearbox: "5/6-Speed Manual",
-    length: "3,785 mm",
-    taxTier: "Ultra-Low (69–101 hp)",
-    tip: "Parts and mechanics are everywhere in Bulgaria; stick to manual over MMT semi-auto.",
-    img: "https://images.hgmsites.net/hug/toyota_100232709_h.jpg",
-    fallbackImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR31ZnqIlmU1sIoNFS4-Qq82FwLQAVVBTUjMVleFlv2WlpJ-HW3J8b9BLwJ&s=10",
-    mobileUrl: "https://www.mobile.bg/obiavi/avtomobili-dzhipove/toyota/yaris/ot-2007/do-2011"
+    "id": "jazz",
+    "name": "Honda Jazz",
+    "brandSlug": "honda",
+    "modelSlug": "jazz",
+    "yearFrom": 2008,
+    "yearTo": 2011,
+    "years": "2008–2011",
+    "style": "Tall Hatchback",
+    "categories": [
+      "tall",
+      "auto"
+    ],
+    "subtitle": "Huge glass area, near-zero blind spots & Magic Seats",
+    "why": "Famous for massive front quarter-windows that make intersections and tight turns super clear. Rear Magic Seats fold completely flat for bulky luggage or shopping.",
+    "engine": "1.2L / 1.4L i-VTEC Petrol",
+    "timing": "Timing Chain (very durable)",
+    "gearbox": "5-Speed Manual / Full Auto",
+    "autoGood": true,
+    "lengthMm": 3900,
+    "length": "3,900 mm",
+    "turningCircle": "9.8 m (easy maneuvering)",
+    "safety": "5★ Euro NCAP",
+    "fuelAvg": 5.3,
+    "fuelDetail": "6.5 L city / 4.7 L hwy",
+    "trunk": "337 L (883 L folded)",
+    "priceMin": 3200,
+    "priceRange": "€3,200 – €4,900",
+    "taxTier": "Low (90–100 hp)",
+    "annualCost": {
+      "tax": "€25 – €45 / yr",
+      "insurance": "€145 – €180 / yr",
+      "service": "€95 – €135 / yr"
+    },
+    "scores": {
+      "park": 4.5,
+      "visibility": 5.0,
+      "reliability": 5.0,
+      "cost": 4.4
+    },
+    "pros": [
+      "Best-in-class interior space and 337 L trunk in a compact 3.9 m body",
+      "Legendary Honda i-VTEC reliability with timing chain",
+      "Panoramic visibility makes urban junctions stress-free"
+    ],
+    "cons": [
+      "Higher resale prices on Mobile.bg compared to rivals",
+      "i-SHIFT semi-automatic gearbox feels jerky — stick to manual or CVT/full auto"
+    ],
+    "check": "Check the spare wheel well for moisture (tailgate seal), inspect rear arches for rust, and confirm the gearbox is NOT i-SHIFT if looking at automatics.",
+    "tip": "Choose manual or full automatic; avoid the jerky i-SHIFT semi-automatic.",
+    "img": "https://img-ik.cars.co.za/news-site-za/images/2021/02/Honda-Jazz_2009.jpg",
+    "fallbackImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJH_Er3OELSEmogLpAWt1gaE7Wu575uW5Eg5S-Y7BICx_HsdHLvWE2sS1u&s=10"
   },
   {
-    id: "splash",
-    name: "Suzuki Splash",
-    years: "2008–2012",
-    style: "Tall Micro-MPV",
-    categories: ["tall"],
-    subtitle: "Mechanical twin to the Opel Agila — often better priced",
-    why: "Shares the exact same platform, tall cabin, and high driving posture as the Opel Agila, just with a Suzuki badge and slightly sportier front styling.",
-    engine: "1.0L / 1.2L Petrol",
-    gearbox: "5-Speed Manual",
-    length: "3,715 mm",
-    taxTier: "Ultra-Low (65–86 hp)",
-    tip: "Great value alternative when Agila listings are overpriced.",
-    img: "https://d2q01ftr6ua4w.cloudfront.net/assets/images/6664d1714709c538ece836c06932b3e528587184.jpg?t=1790926491",
-    fallbackImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ4vgqmLRXB0rN5GPxBuuP3RQ3XNfMvIe0H_KxPTm8z8ODtmg9ycRMjk9x&s=10",
-    mobileUrl: "https://www.mobile.bg/obiavi/avtomobili-dzhipove/suzuki/splash/ot-2008/do-2012"
+    "id": "yaris",
+    "name": "Toyota Yaris",
+    "brandSlug": "toyota",
+    "modelSlug": "yaris",
+    "yearFrom": 2007,
+    "yearTo": 2011,
+    "years": "2007–2011",
+    "style": "Compact Hatchback",
+    "categories": [
+      "compact"
+    ],
+    "subtitle": "Bulletproof reliability & tiny turning circle",
+    "why": "The definition of a worry-free first car. Feather-light steering and a tight turning radius make U-turns and tight city parking effortless.",
+    "engine": "1.0L / 1.33L Petrol",
+    "timing": "Timing Chain (lifetime)",
+    "gearbox": "5/6-Speed Manual",
+    "autoGood": false,
+    "lengthMm": 3785,
+    "length": "3,785 mm",
+    "turningCircle": "9.4 m (tiny U-turns)",
+    "safety": "5★ Euro NCAP",
+    "fuelAvg": 5.1,
+    "fuelDetail": "6.2 L city / 4.5 L hwy",
+    "trunk": "272 L (737 L folded)",
+    "priceMin": 2700,
+    "priceRange": "€2,700 – €4,400",
+    "taxTier": "Ultra-Low (69–101 hp)",
+    "annualCost": {
+      "tax": "€18 – €40 / yr",
+      "insurance": "€135 – €175 / yr",
+      "service": "€85 – €120 / yr"
+    },
+    "scores": {
+      "park": 4.8,
+      "visibility": 4.4,
+      "reliability": 5.0,
+      "cost": 4.7
+    },
+    "pros": [
+      "Virtually bulletproof mechanicals and massive parts availability in Bulgaria",
+      "Tight 9.4 m turning circle makes U-turns and parking effortless",
+      "Sliding rear seat lets you prioritize legroom or trunk space"
+    ],
+    "cons": [
+      "Center-mounted digital speedometer takes a couple of days to get used to",
+      "MMT semi-automatic gearbox is prone to actuator issues — buy manual"
+    ],
+    "check": "Listen for water pump noise on 1.3L engines, check underbody rust on Alpine imports, and skip MMT semi-automatics.",
+    "tip": "Parts and mechanics are everywhere in Bulgaria; stick to manual over MMT semi-auto.",
+    "img": "https://images.hgmsites.net/hug/toyota_100232709_h.jpg",
+    "fallbackImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR31ZnqIlmU1sIoNFS4-Qq82FwLQAVVBTUjMVleFlv2WlpJ-HW3J8b9BLwJ&s=10"
   },
   {
-    id: "note",
-    name: "Nissan Note",
-    years: "2007–2011",
-    style: "Tall Mini-MPV",
-    categories: ["tall"],
-    subtitle: "Airy cabin, great visibility & sliding rear bench",
-    why: "Tall roofline and elevated seats give great road visibility, while the sliding rear seat lets you expand trunk space whenever needed.",
-    engine: "1.4L Petrol",
-    gearbox: "5-Speed Manual",
-    length: "4,083 mm",
-    taxTier: "Low (88 hp)",
-    tip: "The 1.4L petrol engine is quiet, simple, and well-suited for highway trips too.",
-    img: "https://cdn.caranddriving.com/f2/images/used/big/nissannote(4).jpg",
-    fallbackImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdJ-7EOXrlZY9AUwTZVY9ciQqUBpOxTDdOBJiwpGDFaECkfkxSWgKmWbc&s=10",
-    mobileUrl: "https://www.mobile.bg/obiavi/avtomobili-dzhipove/nissan/note/ot-2007/do-2011"
+    "id": "i10",
+    "name": "Hyundai i10",
+    "brandSlug": "hyundai",
+    "modelSlug": "i10",
+    "yearFrom": 2008,
+    "yearTo": 2013,
+    "years": "2008–2013",
+    "style": "Tall City Car",
+    "categories": [
+      "tall",
+      "compact",
+      "auto"
+    ],
+    "subtitle": "Tall roofline, easy parking & smooth 4-cylinder engines",
+    "why": "Direct rival to the Spark and Picanto, combining an upright Agila-style driving view with a super-compact body and reliable 4-cylinder Hyundai engines.",
+    "engine": "1.1L / 1.2L Petrol (4-Cyl)",
+    "timing": "Chain (1.2L) / Belt (1.1L)",
+    "gearbox": "5-Speed Manual / 4-Speed Auto",
+    "autoGood": true,
+    "lengthMm": 3565,
+    "length": "3,565 mm",
+    "turningCircle": "9.5 m (effortless U-turns)",
+    "safety": "4★ Euro NCAP",
+    "fuelAvg": 4.8,
+    "fuelDetail": "5.8 L city / 4.2 L hwy",
+    "trunk": "225 L (910 L folded)",
+    "priceMin": 2200,
+    "priceRange": "€2,200 – €3,500",
+    "taxTier": "Ultra-Low (66–86 hp)",
+    "annualCost": {
+      "tax": "€15 – €28 / yr",
+      "insurance": "€130 – €160 / yr",
+      "service": "€75 – €110 / yr"
+    },
+    "scores": {
+      "park": 4.9,
+      "visibility": 4.7,
+      "reliability": 4.7,
+      "cost": 4.9
+    },
+    "pros": [
+      "Bigger trunk (225 L) and taller cabin than Spark or Picanto",
+      "Smooth 1.2L 4-cylinder engine has a timing chain and handles highways well",
+      "Traditional 4-speed automatic is reliable if you want an auto city car"
+    ],
+    "cons": [
+      "Rear suspension feels bouncy on rough roads when empty",
+      "Basic audio/dashboard layout on early 2008–2010 trims"
+    ],
+    "check": "Check clutch pedal feel and cable play, inspect rear brake calipers for sticking, and verify AC blows cold.",
+    "tip": "The 1.2L Kappa petrol (78–86 hp) is the sweet spot — timing chain and very peppy.",
+    "img": "https://media.whatcar.com/sites/default/files/styles/webp/public/image/57c756a4f149535745142deb32b05874c940bbd5.png.webp?itok=ehJsXopA",
+    "fallbackImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgaGGWq5ITMRZFUV8SweDf7wMiEAnmHHYEUtqg39GX2CfQ0mrHDIwiHU4&s=10"
   },
   {
-    id: "swift",
-    name: "Suzuki Swift",
-    years: "2008–2011",
-    style: "Agile Hatchback",
-    categories: ["compact"],
-    subtitle: "Closest driving feel to the Mazda 2 + optional 4x4",
-    why: "Planted, predictable handling with clear sightlines and straightforward controls. Stylish exterior that still looks modern on the road.",
-    engine: "1.3L Petrol",
-    gearbox: "5-Speed Manual",
-    length: "3,760 mm",
-    taxTier: "Low (92 hp)",
-    tip: "Bulgaria has many 4x4 versions available — great bonus confidence for winter snow.",
-    img: "https://www.autozine.org/Archive/Suzuki/old/Swift_2010_Sport_1.jpg",
-    fallbackImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVxun7rL7mz3ewNonE2QUek5X6KDABqPkwwd_Gm_s9qvRJH64NRWejp3Q&s=10",
-    mobileUrl: "https://www.mobile.bg/obiavi/avtomobili-dzhipove/suzuki/swift/ot-2008/do-2011"
+    "id": "aygo",
+    "name": "Toyota Aygo",
+    "brandSlug": "toyota",
+    "modelSlug": "aygo",
+    "yearFrom": 2008,
+    "yearTo": 2013,
+    "years": "2008–2013",
+    "style": "Ultra-Compact City Car",
+    "categories": [
+      "compact"
+    ],
+    "subtitle": "Shortest car on the list (3.41 m) & Toyota reliability",
+    "why": "Mechanical twin to the Peugeot 107 and Citroën C1. At just 3.41 meters long, it slips into parking gaps no other car can touch, with rock-bottom running costs.",
+    "engine": "1.0L VVT-i Petrol (Toyota)",
+    "timing": "Timing Chain (bulletproof)",
+    "gearbox": "5-Speed Manual",
+    "autoGood": false,
+    "lengthMm": 3415,
+    "length": "3,415 mm",
+    "turningCircle": "9.4 m (tiny footprint)",
+    "safety": "4★ Euro NCAP",
+    "fuelAvg": 4.5,
+    "fuelDetail": "5.4 L city / 4.0 L hwy",
+    "trunk": "139 L (712 L folded)",
+    "priceMin": 2100,
+    "priceRange": "€2,100 – €3,600",
+    "taxTier": "Ultra-Low (68 hp)",
+    "annualCost": {
+      "tax": "€14 – €22 / yr",
+      "insurance": "€125 – €155 / yr",
+      "service": "€70 – €100 / yr"
+    },
+    "scores": {
+      "park": 5.0,
+      "visibility": 4.5,
+      "reliability": 4.9,
+      "cost": 5.0
+    },
+    "pros": [
+      "Shortest length (3.41 m) and lowest fuel consumption (~4.5 L/100 km) here",
+      "Toyota's 1.0L timing-chain engine easily runs past 250,000 km",
+      "Cheap parts shared with Peugeot 107 and Citroën C1 everywhere in Bulgaria"
+    ],
+    "cons": [
+      "Very small 139 L trunk (shopping bags fit, big suitcases go on rear seat)",
+      "Skip the MMT semi-automatic gearbox — stick strictly to the 5-speed manual"
+    ],
+    "check": "Check the carpets and boot floor for dampness (door/tailgate rubber seals) and test the clutch bite point.",
+    "tip": "You can also search Peugeot 107 or Citroën C1 — same Toyota engine underneath!",
+    "img": "https://images.clickdealer.co.uk/vehicles/6803/6803386/large2/162670256.jpg",
+    "fallbackImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8TuLJilG7XW0O34OYmEyNsyJ7w8XOPvuiz1xVHYK-gVQBdTzZL9_qdKw&s=10"
   },
   {
-    id: "i20",
-    name: "Hyundai i20",
-    years: "2009–2012",
-    style: "Compact Hatchback",
-    categories: ["compact", "auto"],
-    subtitle: "Feather-light clutch, modern safety & cheap parts",
-    why: "Takes the stress out of hill starts and stop-and-go traffic thanks to a very forgiving clutch and light steering.",
-    engine: "1.2L / 1.4L Petrol",
-    gearbox: "5-Speed Manual / 4-Speed Auto",
-    length: "3,940 mm",
-    taxTier: "Low (78–100 hp)",
-    tip: "Very affordable spare parts across Bulgaria and works well with LPG if installed.",
-    img: "https://stimg.cardekho.com/car-images/carexteriorimages/large/Hyundai/Hyundaii-20-Asta/front-left-side-047.jpg?imwidth=420&impolicy=resize",
-    fallbackImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUUIlbcwxFpZy5Ai1nHstgKf3aI1_8CNK6MQQN3jlcCvh4tbIvtN9adC_i&s=10",
-    mobileUrl: "https://www.mobile.bg/obiavi/avtomobili-dzhipove/hyundai/i20/ot-2009/do-2012"
+    "id": "panda",
+    "name": "Fiat Panda (169)",
+    "brandSlug": "fiat",
+    "modelSlug": "panda",
+    "yearFrom": 2007,
+    "yearTo": 2012,
+    "years": "2007–2012",
+    "style": "Tall Micro-MPV",
+    "categories": [
+      "tall",
+      "compact"
+    ],
+    "subtitle": "Agila-style view + 'City' button feather-light steering",
+    "why": "Boxy upright windows give near-360° visibility, and pressing the famous 'City' button makes the steering wheel spin with one finger for effortless parking.",
+    "engine": "1.1L / 1.2L FIRE Petrol",
+    "timing": "Timing Belt (very cheap & safe)",
+    "gearbox": "5-Speed Manual",
+    "autoGood": false,
+    "lengthMm": 3538,
+    "length": "3,538 mm",
+    "turningCircle": "9.1 m (tightest U-turn!)",
+    "safety": "3★ Euro NCAP",
+    "fuelAvg": 5.2,
+    "fuelDetail": "6.4 L city / 4.4 L hwy",
+    "trunk": "206 L (860 L folded)",
+    "priceMin": 1800,
+    "priceRange": "€1,800 – €3,200",
+    "taxTier": "Ultra-Low (54–69 hp)",
+    "annualCost": {
+      "tax": "€14 – €24 / yr",
+      "insurance": "€125 – €155 / yr",
+      "service": "€65 – €95 / yr"
+    },
+    "scores": {
+      "park": 5.0,
+      "visibility": 4.9,
+      "reliability": 4.6,
+      "cost": 5.0
+    },
+    "pros": [
+      "'City' steering mode + 9.1 m turning circle make parking feel like a video game",
+      "1.2L FIRE petrol engine is famously tough and super cheap to repair in Bulgaria",
+      "High seating and square corners make judging distances effortless"
+    ],
+    "cons": [
+      "Modest highway power (best around 100–110 km/h)",
+      "Avoid Dualogic semi-automatic versions; manual is bulletproof"
+    ],
+    "check": "Test the electric power steering ('City' mode) for warning lights, check front suspension arms over bumps, and verify 1.2L (60/69 hp) over 1.1L.",
+    "tip": "The 1.2L FIRE petrol is one of the cheapest, most reliable engines to own in Bulgaria.",
+    "img": "https://cars.ni/wp-content/uploads/carsni_6vldTO3Xs0iP.jpg",
+    "fallbackImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTceGDLmp2rQmPqUHlhAUgn_dFjvYVhb9e4oj055HIhS_yJjRFsLDpnTZI&s=10"
   },
   {
-    id: "picanto",
-    name: "Kia Picanto",
-    years: "2008–2011",
-    style: "Ultra-Compact City Car",
-    categories: ["compact"],
-    subtitle: "Fits into tight parking spaces other cars pass by",
-    why: "Slightly shorter and narrower than the Mazda 2 and Agila, making urban parking and narrow streets effortless for a new driver.",
-    engine: "1.0L / 1.1L Petrol",
-    gearbox: "5-Speed Manual / 4-Speed Auto",
-    length: "3,535 mm",
-    taxTier: "Ultra-Low (62–65 hp)",
-    tip: "Lowest annual road tax and GO insurance costs on this entire list.",
-    img: "https://img.ukcardata.co.uk/w:1200/h:1200/q:85/49/fd/v1-236899630544-0/v1-236899630544-0-0.jpg",
-    fallbackImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSriBbvYGyYFiJwt9JXxbTT2Jzi-krhDoA8hm-QuRgsqdqk5ybnqbJ2zsI&s=10",
-    mobileUrl: "https://www.mobile.bg/obiavi/avtomobili-dzhipove/kia/picanto/ot-2008/do-2011"
+    "id": "splash",
+    "name": "Suzuki Splash",
+    "brandSlug": "suzuki",
+    "modelSlug": "splash",
+    "yearFrom": 2008,
+    "yearTo": 2012,
+    "years": "2008–2012",
+    "style": "Tall Micro-MPV",
+    "categories": [
+      "tall"
+    ],
+    "subtitle": "Mechanical twin to the Opel Agila — often better priced",
+    "why": "Shares the exact same platform, tall cabin, and high driving posture as the Opel Agila, just with a Suzuki badge and slightly sportier front styling.",
+    "engine": "1.0L / 1.2L Petrol",
+    "timing": "Timing Chain (durable)",
+    "gearbox": "5-Speed Manual",
+    "autoGood": false,
+    "lengthMm": 3715,
+    "length": "3,715 mm",
+    "turningCircle": "9.4 m (super nimble)",
+    "safety": "4★ Euro NCAP",
+    "fuelAvg": 5.1,
+    "fuelDetail": "6.1 L city / 4.5 L hwy",
+    "trunk": "202 L (1,050 L folded)",
+    "priceMin": 2200,
+    "priceRange": "€2,200 – €3,600",
+    "taxTier": "Ultra-Low (65–86 hp)",
+    "annualCost": {
+      "tax": "€15 – €30 / yr",
+      "insurance": "€135 – €165 / yr",
+      "service": "€80 – €115 / yr"
+    },
+    "scores": {
+      "park": 4.8,
+      "visibility": 4.9,
+      "reliability": 4.7,
+      "cost": 4.8
+    },
+    "pros": [
+      "Identical high visibility and Suzuki reliability as Opel Agila, often cheaper",
+      "Easy step-in height and tall headroom inside",
+      "Very economical to fuel, tax, and maintain"
+    ],
+    "cons": [
+      "Small trunk until you fold the rear seats flat",
+      "Fewer listings than Yaris or Fiesta, though still easy to find"
+    ],
+    "check": "Check gearbox smoothness when cold, inspect rear exhaust silencer for surface rust, and test all electric windows.",
+    "tip": "Great value alternative when Agila listings are overpriced.",
+    "img": "https://d2q01ftr6ua4w.cloudfront.net/assets/images/6664d1714709c538ece836c06932b3e528587184.jpg?t=1790926491",
+    "fallbackImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ4vgqmLRXB0rN5GPxBuuP3RQ3XNfMvIe0H_KxPTm8z8ODtmg9ycRMjk9x&s=10"
   },
   {
-    id: "fiesta",
-    name: "Ford Fiesta",
-    years: "2009–2012",
-    style: "Agile Hatchback",
-    categories: ["compact"],
-    subtitle: "Shares core engineering with the Mazda 2",
-    why: "Built on the same global platform as the Mazda 2, offering reassuring highway stability and crisp, predictable steering.",
-    engine: "1.25L Duratec Petrol",
-    gearbox: "5-Speed Manual",
-    length: "3,950 mm",
-    taxTier: "Low (82 hp)",
-    tip: "The 1.25L Duratec petrol is simple, proven, and easy for any mechanic to service.",
-    img: "https://s1.cdn.autoevolution.com/images/gallery/FORDFiesta5Doors-3752_1.jpg",
-    fallbackImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkZUQHnepzRPfT2Qmcuo_1LPmlw68LpIHQv0n8730yLAvL-ED7rbQVYL4&s=10",
-    mobileUrl: "https://www.mobile.bg/obiavi/avtomobili-dzhipove/ford/fiesta/ot-2009/do-2012"
+    "id": "note",
+    "name": "Nissan Note",
+    "brandSlug": "nissan",
+    "modelSlug": "note",
+    "yearFrom": 2007,
+    "yearTo": 2011,
+    "years": "2007–2011",
+    "style": "Tall Mini-MPV",
+    "categories": [
+      "tall"
+    ],
+    "subtitle": "Airy cabin, great visibility & sliding rear bench",
+    "why": "Tall roofline and elevated seats give great road visibility, while the sliding rear seat lets you expand trunk space whenever needed.",
+    "engine": "1.4L Petrol",
+    "timing": "Timing Chain",
+    "gearbox": "5-Speed Manual",
+    "autoGood": false,
+    "lengthMm": 4083,
+    "length": "4,083 mm",
+    "turningCircle": "11.0 m (compact MPV)",
+    "safety": "4★ Euro NCAP",
+    "fuelAvg": 5.9,
+    "fuelDetail": "7.2 L city / 5.1 L hwy",
+    "trunk": "280–437 L (1,332 L folded)",
+    "priceMin": 2300,
+    "priceRange": "€2,300 – €3,700",
+    "taxTier": "Low (88 hp)",
+    "annualCost": {
+      "tax": "€25 – €38 / yr",
+      "insurance": "€145 – €180 / yr",
+      "service": "€90 – €125 / yr"
+    },
+    "scores": {
+      "park": 4.2,
+      "visibility": 4.8,
+      "reliability": 4.6,
+      "cost": 4.5
+    },
+    "pros": [
+      "Huge interior and clever double-floor trunk for trips and shopping",
+      "Elevated seating gives a clear view over traffic",
+      "1.4L petrol engine is quiet and comfortable on longer intercity drives"
+    ],
+    "cons": [
+      "Slightly longer (4.08 m) than ultra-compact city cars",
+      "Styling is practical rather than sporty"
+    ],
+    "check": "Inspect front wishbone bushes over bumps and check that the tailgate release switch and interior blower fan work on all speeds.",
+    "tip": "The 1.4L petrol engine is quiet, simple, and well-suited for highway trips too.",
+    "img": "https://cdn.caranddriving.com/f2/images/used/big/nissannote(4).jpg",
+    "fallbackImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdJ-7EOXrlZY9AUwTZVY9ciQqUBpOxTDdOBJiwpGDFaECkfkxSWgKmWbc&s=10"
   },
   {
-    id: "micra",
-    name: "Nissan Micra (K12)",
-    years: "2007–2010",
-    style: "Compact City Car",
-    categories: ["compact", "auto"],
-    subtitle: "Raised headlights act like built-in parking markers",
-    why: "Distinctive raised fender headlights let you see the exact front corners of the car from the driver's seat — huge confidence booster when parking.",
-    engine: "1.2L Petrol",
-    gearbox: "5-Speed Manual / 4-Speed Auto",
-    length: "3,719 mm",
-    taxTier: "Ultra-Low (65–80 hp)",
-    tip: "One of the safest budget choices if she specifically wants a traditional automatic.",
-    img: "https://images-archive.allbids.com.au/auctions/58756/cars/medium/58756-1a_ex.jpg",
-    fallbackImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1AL9qsLsvKfXUAtYjroC0Jd_TqJwps4u4kVi0pOkDEaicYjNtu2qJbWP3&s=10",
-    mobileUrl: "https://www.mobile.bg/obiavi/avtomobili-dzhipove/nissan/micra/ot-2007/do-2010"
+    "id": "swift",
+    "name": "Suzuki Swift",
+    "brandSlug": "suzuki",
+    "modelSlug": "swift",
+    "yearFrom": 2008,
+    "yearTo": 2011,
+    "years": "2008–2011",
+    "style": "Agile Hatchback",
+    "categories": [
+      "compact"
+    ],
+    "subtitle": "Closest driving feel to the Mazda 2 + optional 4x4",
+    "why": "Planted, predictable handling with clear sightlines and straightforward controls. Stylish exterior that still looks modern on the road.",
+    "engine": "1.3L Petrol",
+    "timing": "Timing Chain",
+    "gearbox": "5-Speed Manual",
+    "autoGood": false,
+    "lengthMm": 3760,
+    "length": "3,760 mm",
+    "turningCircle": "9.4 m (very agile)",
+    "safety": "4★ Euro NCAP",
+    "fuelAvg": 5.8,
+    "fuelDetail": "7.2 L city / 5.0 L hwy",
+    "trunk": "213 L (562 L folded)",
+    "priceMin": 2500,
+    "priceRange": "€2,500 – €4,000",
+    "taxTier": "Low (92 hp)",
+    "annualCost": {
+      "tax": "€25 – €40 / yr",
+      "insurance": "€145 – €180 / yr",
+      "service": "€85 – €125 / yr"
+    },
+    "scores": {
+      "park": 4.7,
+      "visibility": 4.3,
+      "reliability": 4.7,
+      "cost": 4.5
+    },
+    "pros": [
+      "Fun, stable, and reassuring on winding roads and highways",
+      "Many 4x4 models available in Bulgaria — great for snowy winters",
+      "Timeless design that still looks sharp"
+    ],
+    "cons": [
+      "Trunk is on the smaller side (213 L)",
+      "Avoid the automated manual (MTA) gearbox; manual is much better"
+    ],
+    "check": "Listen for gearbox input shaft bearing hum at idle (disappears when pressing clutch) and check underbody rust on Swiss/Austrian 4x4 imports.",
+    "tip": "Bulgaria has many 4x4 versions available — great bonus confidence for winter snow.",
+    "img": "https://www.autozine.org/Archive/Suzuki/old/Swift_2010_Sport_1.jpg",
+    "fallbackImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVxun7rL7mz3ewNonE2QUek5X6KDABqPkwwd_Gm_s9qvRJH64NRWejp3Q&s=10"
   },
   {
-    id: "colt",
-    name: "Mitsubishi Colt",
-    years: "2008–2011",
-    style: "Tall Hatchback",
-    categories: ["tall"],
-    subtitle: "Agila-like headroom & underrated Japanese reliability",
-    why: "Tall roofline creates a surprisingly roomy interior inside a compact city footprint, often priced lower than Honda or Toyota rivals in Bulgaria.",
-    engine: "1.1L / 1.3L Petrol",
-    gearbox: "5-Speed Manual",
-    length: "3,870 mm",
-    taxTier: "Low (75–95 hp)",
-    tip: "Timing-chain petrol engines are tough and economical; prefer manual over Allshift.",
-    img: "https://image-cdn.beforward.jp/large/201801/883481/BF751557_5205e7.jpg",
-    fallbackImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaxswSqT-cfRaGh_mn3DJpPZF6e5YHHtbKOI9i4EEJp8kcH0_yIEnXw9k&s=10",
-    mobileUrl: "https://www.mobile.bg/obiavi/avtomobili-dzhipove/mitsubishi/colt/ot-2008/do-2011"
+    "id": "i20",
+    "name": "Hyundai i20",
+    "brandSlug": "hyundai",
+    "modelSlug": "i20",
+    "yearFrom": 2009,
+    "yearTo": 2012,
+    "years": "2009–2012",
+    "style": "Compact Hatchback",
+    "categories": [
+      "compact",
+      "auto"
+    ],
+    "subtitle": "Feather-light clutch, modern safety & cheap parts",
+    "why": "Takes the stress out of hill starts and stop-and-go traffic thanks to a very forgiving clutch and light steering.",
+    "engine": "1.2L / 1.4L Petrol",
+    "timing": "Timing Chain",
+    "gearbox": "5-Speed Manual / 4-Speed Auto",
+    "autoGood": true,
+    "lengthMm": 3940,
+    "length": "3,940 mm",
+    "turningCircle": "10.4 m (standard)",
+    "safety": "5★ Euro NCAP",
+    "fuelAvg": 5.2,
+    "fuelDetail": "6.4 L city / 4.5 L hwy",
+    "trunk": "295 L (1,060 L folded)",
+    "priceMin": 2600,
+    "priceRange": "€2,600 – €4,200",
+    "taxTier": "Low (78–100 hp)",
+    "annualCost": {
+      "tax": "€22 – €42 / yr",
+      "insurance": "€140 – €175 / yr",
+      "service": "€80 – €115 / yr"
+    },
+    "scores": {
+      "park": 4.4,
+      "visibility": 4.3,
+      "reliability": 4.6,
+      "cost": 4.7
+    },
+    "pros": [
+      "Very forgiving clutch and light steering — ideal for learning",
+      "Generous 295 L trunk and 5-star Euro NCAP safety rating",
+      "Affordable parts across Bulgaria and very LPG-friendly"
+    ],
+    "cons": [
+      "Steering feels a bit numb compared to Mazda 2 or Ford Fiesta",
+      "Interior styling is functional rather than flashy"
+    ],
+    "check": "Check steering column coupling for any light clicking when turning at low speeds, and verify the handbrake holds firmly on hills.",
+    "tip": "Very affordable spare parts across Bulgaria and works well with LPG if installed.",
+    "img": "https://stimg.cardekho.com/car-images/carexteriorimages/large/Hyundai/Hyundaii-20-Asta/front-left-side-047.jpg?imwidth=420&impolicy=resize",
+    "fallbackImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUUIlbcwxFpZy5Ai1nHstgKf3aI1_8CNK6MQQN3jlcCvh4tbIvtN9adC_i&s=10"
+  },
+  {
+    "id": "fabia",
+    "name": "Škoda Fabia II",
+    "brandSlug": "skoda",
+    "modelSlug": "fabia",
+    "yearFrom": 2008,
+    "yearTo": 2012,
+    "years": "2008–2012",
+    "style": "Tall Hatchback",
+    "categories": [
+      "tall",
+      "compact"
+    ],
+    "subtitle": "Big 300 L trunk, upright visibility & VW-group solid feel",
+    "why": "Upright windows give a clear view of corners, while its practical 300 L trunk and solid highway feel make it great for both Yambol city runs and longer trips.",
+    "engine": "1.4L 16V Petrol (86 hp)",
+    "timing": "Timing Belt (simple 1.4 MPI)",
+    "gearbox": "5-Speed Manual",
+    "autoGood": false,
+    "lengthMm": 3992,
+    "length": "3,992 mm",
+    "turningCircle": "10.0 m (predictable)",
+    "safety": "4★ Euro NCAP",
+    "fuelAvg": 5.9,
+    "fuelDetail": "7.5 L city / 5.0 L hwy",
+    "trunk": "300 L (1,163 L folded)",
+    "priceMin": 2300,
+    "priceRange": "€2,300 – €3,900",
+    "taxTier": "Low (86 hp)",
+    "annualCost": {
+      "tax": "€22 – €38 / yr",
+      "insurance": "€145 – €180 / yr",
+      "service": "€85 – €120 / yr"
+    },
+    "scores": {
+      "park": 4.3,
+      "visibility": 4.6,
+      "reliability": 4.6,
+      "cost": 4.6
+    },
+    "pros": [
+      "1.4L 16V (86 hp) non-turbo engine is simple, durable, and loved by BG mechanics",
+      "Generous 300 L trunk and tall headroom for tall drivers or passengers",
+      "Abundant listings around Yambol, Sliven, and Stara Zagora"
+    ],
+    "cons": [
+      "Skip early 1.2 TSI (timing chain) and 1.2 HTP 3-cyl — stick to 1.4 16V petrol",
+      "Interior is sturdy and logical rather than stylish"
+    ],
+    "check": "Confirm it has the 1.4L 16V (86 hp) engine, check door wiring looms (electric windows), and verify timing belt replacement date.",
+    "tip": "The 1.4 16V (86 hp) manual is the gold standard Fabia for worry-free ownership.",
+    "img": "https://stimg.cardekho.com/car-images/carexteriorimages/large/Skoda/Skoda-Fabia-1.2-MPI-Active/front-left-side-047.jpg?imwidth=420&impolicy=resize",
+    "fallbackImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShVVCTquGdJAG58m-v2mezmJb5LTZl4tun-ydzTHwshL4VC_qenjPMOXjz&s=10"
+  },
+  {
+    "id": "corsa",
+    "name": "Opel Corsa D",
+    "brandSlug": "opel",
+    "modelSlug": "corsa",
+    "yearFrom": 2008,
+    "yearTo": 2012,
+    "years": "2008–2012",
+    "style": "Compact Hatchback",
+    "categories": [
+      "compact",
+      "auto"
+    ],
+    "subtitle": "Huge local supply in Bulgaria & super cheap spare parts",
+    "why": "One of the most widely available first cars around Yambol and Sliven. Feels substantial and safe on the road, with affordable maintenance at every local workshop.",
+    "engine": "1.2L / 1.4L Petrol",
+    "timing": "Timing Chain",
+    "gearbox": "5-Speed Manual / 4-Speed Auto",
+    "autoGood": true,
+    "lengthMm": 3999,
+    "length": "3,999 mm",
+    "turningCircle": "10.1 m (easy handling)",
+    "safety": "5★ Euro NCAP",
+    "fuelAvg": 5.5,
+    "fuelDetail": "6.9 L city / 4.7 L hwy",
+    "trunk": "285 L (1,100 L folded)",
+    "priceMin": 2300,
+    "priceRange": "€2,300 – €3,900",
+    "taxTier": "Low (80–100 hp)",
+    "annualCost": {
+      "tax": "€20 – €42 / yr",
+      "insurance": "€140 – €175 / yr",
+      "service": "€80 – €115 / yr"
+    },
+    "scores": {
+      "park": 4.3,
+      "visibility": 4.1,
+      "reliability": 4.5,
+      "cost": 4.7
+    },
+    "pros": [
+      "Massive selection on Mobile.bg — easy to find a clean one close to Yambol",
+      "5-star safety and stable, planted ride on the A1 motorway",
+      "1.4L 4-speed traditional automatic is reliable (avoid Easytronic semi-auto)"
+    ],
+    "cons": [
+      "Thick front pillars require an extra glance at pedestrian crossings",
+      "1.2L engine is fine for city, but 1.4L (90–100 hp) feels much better on highways"
+    ],
+    "check": "Listen for timing chain rattle on cold start, inspect coolant tank for oil/leaks, and avoid Easytronic semi-automatics.",
+    "tip": "Prefer the 1.4L petrol (90/100 hp) — great balance of economy and highway comfort.",
+    "img": "https://opel.drive.place/images/opel/opel_corsa_d-res_hatchback_5d_1.jpg",
+    "fallbackImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaowex3SIW9p-y50528BMLYXntBbutk2ThfzN4fGbqeizR0XuOSCe7nK9T&s=10"
+  },
+  {
+    "id": "clio",
+    "name": "Renault Clio III",
+    "brandSlug": "renault",
+    "modelSlug": "clio",
+    "yearFrom": 2008,
+    "yearTo": 2012,
+    "years": "2008–2012",
+    "style": "Comfort Hatchback",
+    "categories": [
+      "compact"
+    ],
+    "subtitle": "Softest suspension for bumpy roads & 5-star safety",
+    "why": "Famous for soaking up potholes and rough city streets better than almost any rival. Calm, refined cabin with a bulletproof 1.2 16V beginner petrol engine.",
+    "engine": "1.2L 16V Petrol (75 hp)",
+    "timing": "Timing Belt (affordable)",
+    "gearbox": "5-Speed Manual",
+    "autoGood": false,
+    "lengthMm": 4032,
+    "length": "4,032 mm",
+    "turningCircle": "10.3 m (smooth steering)",
+    "safety": "5★ Euro NCAP",
+    "fuelAvg": 5.8,
+    "fuelDetail": "7.3 L city / 4.9 L hwy",
+    "trunk": "288 L (1,038 L folded)",
+    "priceMin": 2100,
+    "priceRange": "€2,100 – €3,600",
+    "taxTier": "Ultra-Low (75 hp)",
+    "annualCost": {
+      "tax": "€18 – €30 / yr",
+      "insurance": "€135 – €170 / yr",
+      "service": "€80 – €115 / yr"
+    },
+    "scores": {
+      "park": 4.3,
+      "visibility": 4.3,
+      "reliability": 4.6,
+      "cost": 4.7
+    },
+    "pros": [
+      "Most comfortable suspension on rough urban roads in this price bracket",
+      "Simple 1.2 16V (75 hp) petrol engine is reliable and very LPG-friendly",
+      "Galvanized body resists rust better than many Japanese/German rivals"
+    ],
+    "cons": [
+      "Slightly longer (4.03 m) than ultra-compact city cars",
+      "Front headlight bulbs can be fiddly to replace yourself"
+    ],
+    "check": "Clear the scuttle drains under the windshield (prevents wiper motor water damage) and check front coil springs and ignition coil pack.",
+    "tip": "Great rust resistance and super comfortable ride if local roads are bumpy.",
+    "img": "https://photos.webuycars.co.za/photobooth/85D813943/Thumbnails/85D8139430.webp",
+    "fallbackImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9hLuVdzKJ1A_NIV9-nzadcthnbdjDeBdofkTtKBMhbpwyHtoIymRkI-eR&s=10"
+  },
+  {
+    "id": "fiat500",
+    "name": "Fiat 500",
+    "brandSlug": "fiat",
+    "modelSlug": "500",
+    "yearFrom": 2008,
+    "yearTo": 2012,
+    "years": "2008–2012",
+    "style": "Stylish 3-Door City Car",
+    "categories": [
+      "compact"
+    ],
+    "subtitle": "Iconic retro style + Panda reliability & 'City' steering",
+    "why": "Shares the proven 1.2L FIRE engine and feather-light 'City' steering mode with the Fiat Panda, wrapped in a charming retro design that holds its value.",
+    "engine": "1.2L FIRE Petrol (69 hp)",
+    "timing": "Timing Belt (cheap & simple)",
+    "gearbox": "5-Speed Manual",
+    "autoGood": false,
+    "lengthMm": 3546,
+    "length": "3,546 mm",
+    "turningCircle": "9.3 m (effortless parking)",
+    "safety": "5★ Euro NCAP",
+    "fuelAvg": 5.1,
+    "fuelDetail": "6.4 L city / 4.3 L hwy",
+    "trunk": "185 L (550 L folded)",
+    "priceMin": 3400,
+    "priceRange": "€3,400 – €5,200",
+    "taxTier": "Ultra-Low (69 hp)",
+    "annualCost": {
+      "tax": "€16 – €26 / yr",
+      "insurance": "€130 – €160 / yr",
+      "service": "€75 – €105 / yr"
+    },
+    "scores": {
+      "park": 4.9,
+      "visibility": 4.2,
+      "reliability": 4.6,
+      "cost": 4.5
+    },
+    "pros": [
+      "Stylish, cheerful interior and exterior — easy to fall in love with",
+      "Ultra-short 3.55 m body + 'City' steering mode makes parking a breeze",
+      "5-star Euro NCAP safety and reliable 1.2L FIRE petrol engine"
+    ],
+    "cons": [
+      "3-door only and tighter rear seats than 5-door rivals",
+      "Costs more to buy than mechanically similar Fiat Panda"
+    ],
+    "check": "Test the outer door handles (hinges can loosen), check rear hatch wiring loom, and stick to the 1.2L manual rather than Dualogic semi-auto.",
+    "tip": "The 1.2L (69 hp) manual is the most reliable and easiest to resell later.",
+    "img": "https://cdn.caranddriving.com/f2/images/used/large/Fiat/FIAT5002008.jpg",
+    "fallbackImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmekHaAna7BzGuiau7iT4QeVKQhWGOSY5-zHgXBMX6kCW7ZTn_QH1AFH4&s=10"
+  },
+  {
+    "id": "picanto",
+    "name": "Kia Picanto",
+    "brandSlug": "kia",
+    "modelSlug": "picanto",
+    "yearFrom": 2008,
+    "yearTo": 2011,
+    "years": "2008–2011",
+    "style": "Ultra-Compact City Car",
+    "categories": [
+      "compact"
+    ],
+    "subtitle": "Fits into tight parking spaces other cars pass by",
+    "why": "Slightly shorter and narrower than the Mazda 2 and Agila, making urban parking and narrow streets effortless for a new driver.",
+    "engine": "1.0L / 1.1L Petrol",
+    "timing": "Timing Belt (cheap to replace)",
+    "gearbox": "5-Speed Manual / 4-Speed Auto",
+    "autoGood": true,
+    "lengthMm": 3535,
+    "length": "3,535 mm",
+    "turningCircle": "9.2 m (easiest U-turn)",
+    "safety": "3★ Euro NCAP",
+    "fuelAvg": 4.9,
+    "fuelDetail": "5.9 L city / 4.3 L hwy",
+    "trunk": "157 L (882 L folded)",
+    "priceMin": 1900,
+    "priceRange": "€1,900 – €3,100",
+    "taxTier": "Ultra-Low (62–65 hp)",
+    "annualCost": {
+      "tax": "€14 – €22 / yr",
+      "insurance": "€125 – €155 / yr",
+      "service": "€75 – €105 / yr"
+    },
+    "scores": {
+      "park": 5.0,
+      "visibility": 4.4,
+      "reliability": 4.5,
+      "cost": 5.0
+    },
+    "pros": [
+      "Ultra-short 3.53 m body — parks almost anywhere",
+      "Lowest road tax, fuel bill, and GO insurance costs",
+      "4-cylinder 1.0/1.1 engines are simple and cheap to service"
+    ],
+    "cons": [
+      "Small 157 L trunk and modest power for long highway journeys",
+      "Higher road noise above 110 km/h"
+    ],
+    "check": "Verify timing belt replacement history (these use a belt, not a chain), and check the clutch cable tension.",
+    "tip": "Lowest annual road tax and GO insurance costs on this entire list.",
+    "img": "https://img.ukcardata.co.uk/w:1200/h:1200/q:85/49/fd/v1-236899630544-0/v1-236899630544-0-0.jpg",
+    "fallbackImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSriBbvYGyYFiJwt9JXxbTT2Jzi-krhDoA8hm-QuRgsqdqk5ybnqbJ2zsI&s=10"
+  },
+  {
+    "id": "fiesta",
+    "name": "Ford Fiesta",
+    "brandSlug": "ford",
+    "modelSlug": "fiesta",
+    "yearFrom": 2009,
+    "yearTo": 2012,
+    "years": "2009–2012",
+    "style": "Agile Hatchback",
+    "categories": [
+      "compact"
+    ],
+    "subtitle": "Shares core engineering with the Mazda 2",
+    "why": "Built on the same global platform as the Mazda 2, offering reassuring highway stability and crisp, predictable steering.",
+    "engine": "1.25L Duratec Petrol",
+    "timing": "Timing Belt (long interval)",
+    "gearbox": "5-Speed Manual",
+    "autoGood": false,
+    "lengthMm": 3950,
+    "length": "3,950 mm",
+    "turningCircle": "10.2 m (easy control)",
+    "safety": "5★ Euro NCAP",
+    "fuelAvg": 5.5,
+    "fuelDetail": "7.0 L city / 4.6 L hwy",
+    "trunk": "295 L (979 L folded)",
+    "priceMin": 2700,
+    "priceRange": "€2,700 – €4,300",
+    "taxTier": "Low (82 hp)",
+    "annualCost": {
+      "tax": "€22 – €38 / yr",
+      "insurance": "€140 – €175 / yr",
+      "service": "€85 – €120 / yr"
+    },
+    "scores": {
+      "park": 4.4,
+      "visibility": 4.1,
+      "reliability": 4.6,
+      "cost": 4.6
+    },
+    "pros": [
+      "Best-in-class handling and highway composure",
+      "1.25L Duratec petrol engine is proven, simple, and mechanic-friendly",
+      "Modern dashboard and 295 L trunk"
+    ],
+    "cons": [
+      "Thick rear pillars reduce over-the-shoulder rear visibility slightly",
+      "Avoid PowerShift dual-clutch automatics in this budget"
+    ],
+    "check": "Check timing belt history on the 1.25L Duratec, inspect for water leaks in the spare wheel well, and test the central locking.",
+    "tip": "The 1.25L Duratec petrol is simple, proven, and easy for any mechanic to service.",
+    "img": "https://s1.cdn.autoevolution.com/images/gallery/FORDFiesta5Doors-3752_1.jpg",
+    "fallbackImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkZUQHnepzRPfT2Qmcuo_1LPmlw68LpIHQv0n8730yLAvL-ED7rbQVYL4&s=10"
+  },
+  {
+    "id": "micra",
+    "name": "Nissan Micra (K12)",
+    "brandSlug": "nissan",
+    "modelSlug": "micra",
+    "yearFrom": 2007,
+    "yearTo": 2010,
+    "years": "2007–2010",
+    "style": "Compact City Car",
+    "categories": [
+      "compact",
+      "auto"
+    ],
+    "subtitle": "Raised headlights act like built-in parking markers",
+    "why": "Distinctive raised fender headlights let you see the exact front corners of the car from the driver's seat — huge confidence booster when parking.",
+    "engine": "1.2L Petrol",
+    "timing": "Timing Chain",
+    "gearbox": "5-Speed Manual / 4-Speed Auto",
+    "autoGood": true,
+    "lengthMm": 3719,
+    "length": "3,719 mm",
+    "turningCircle": "9.2 m (tiny U-turns)",
+    "safety": "4★ Euro NCAP",
+    "fuelAvg": 5.9,
+    "fuelDetail": "7.4 L city / 5.1 L hwy",
+    "trunk": "251 L (584 L folded)",
+    "priceMin": 2000,
+    "priceRange": "€2,000 – €3,300",
+    "taxTier": "Ultra-Low (65–80 hp)",
+    "annualCost": {
+      "tax": "€16 – €30 / yr",
+      "insurance": "€135 – €165 / yr",
+      "service": "€80 – €115 / yr"
+    },
+    "scores": {
+      "park": 4.9,
+      "visibility": 4.6,
+      "reliability": 4.5,
+      "cost": 4.7
+    },
+    "pros": [
+      "Raised headlights make judging the front corners effortless",
+      "Traditional 4-speed automatic is one of the safest budget auto choices",
+      "Very tight 9.2 m turning radius and charming, friendly cabin"
+    ],
+    "cons": [
+      "Rounded design isn't to everyone's taste",
+      "Slightly older interior tech than 2010+ i20 or Fiesta"
+    ],
+    "check": "Listen for timing chain rattle on cold start (if oil changes were skipped) and check that the electric boot latch opens cleanly.",
+    "tip": "One of the safest budget choices if you specifically want a traditional automatic.",
+    "img": "https://images-archive.allbids.com.au/auctions/58756/cars/medium/58756-1a_ex.jpg",
+    "fallbackImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1AL9qsLsvKfXUAtYjroC0Jd_TqJwps4u4kVi0pOkDEaicYjNtu2qJbWP3&s=10"
+  },
+  {
+    "id": "colt",
+    "name": "Mitsubishi Colt",
+    "brandSlug": "mitsubishi",
+    "modelSlug": "colt",
+    "yearFrom": 2008,
+    "yearTo": 2011,
+    "years": "2008–2011",
+    "style": "Tall Hatchback",
+    "categories": [
+      "tall"
+    ],
+    "subtitle": "Agila-like headroom & underrated Japanese reliability",
+    "why": "Tall roofline creates a surprisingly roomy interior inside a compact city footprint, often priced lower than Honda or Toyota rivals in Bulgaria.",
+    "engine": "1.1L / 1.3L Petrol",
+    "timing": "Timing Chain",
+    "gearbox": "5-Speed Manual",
+    "autoGood": false,
+    "lengthMm": 3870,
+    "length": "3,870 mm",
+    "turningCircle": "10.6 m (standard)",
+    "safety": "4★ Euro NCAP",
+    "fuelAvg": 5.5,
+    "fuelDetail": "6.9 L city / 4.7 L hwy",
+    "trunk": "220 L (1,032 L folded)",
+    "priceMin": 2100,
+    "priceRange": "€2,100 – €3,400",
+    "taxTier": "Low (75–95 hp)",
+    "annualCost": {
+      "tax": "€20 – €38 / yr",
+      "insurance": "€140 – €175 / yr",
+      "service": "€85 – €120 / yr"
+    },
+    "scores": {
+      "park": 4.5,
+      "visibility": 4.6,
+      "reliability": 4.7,
+      "cost": 4.6
+    },
+    "pros": [
+      "Tall, airy interior with plenty of headroom and rear legroom",
+      "Underrated on Mobile.bg — great Japanese reliability for less money",
+      "Tough timing-chain 1.3L 4-cylinder petrol engine"
+    ],
+    "cons": [
+      "Front A-pillars are angled forward (slightly wide at sharp left turns)",
+      "Avoid the Allshift automated manual gearbox — stick to 5-speed manual"
+    ],
+    "check": "Inspect front brake discs, check the center info display for faded pixels, and confirm it's a standard manual rather than Allshift.",
+    "tip": "Timing-chain petrol engines are tough and economical; prefer manual over Allshift.",
+    "img": "https://image-cdn.beforward.jp/large/201801/883481/BF751557_5205e7.jpg",
+    "fallbackImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaxswSqT-cfRaGh_mn3DJpPZF6e5YHHtbKOI9i4EEJp8kcH0_yIEnXw9k&s=10"
   }
 ];
 
+const yambolRegions = [
+  { name: "Yambol (Област Ямбол)", slug: "oblast-yambol", dist: "0 km • Local", note: "Closest listings right in Yambol", primary: true },
+  { name: "Sliven (Област Сливен)", slug: "oblast-sliven", dist: "~28 km • 25 min drive", note: "Big used car market right next door", primary: false },
+  { name: "Stara Zagora (Обл. Стара Загора)", slug: "oblast-stara-zagora", dist: "~82 km • 55 min via A1", note: "Large selection along Trakia motorway", primary: false },
+  { name: "Burgas (Област Бургас)", slug: "oblast-burgas", dist: "~92 km • 1 hr via A1", note: "Huge coastal inventory & dealers", primary: false }
+];
+
 let activeFilter = "all";
+let sortBy = "default";
 let searchQuery = "";
 let selectedIds = [];
+let favIds = [];
+let wizState = { gearbox: "any", priority: "park", usage: "city" };
+
+try {
+  const saved = JSON.parse(localStorage.getItem("firstCarFavs") || "[]");
+  if (Array.isArray(saved)) favIds = saved;
+} catch (e) { favIds = []; }
 
 const carGrid = document.getElementById("carGrid");
+const favTabBtn = document.getElementById("favTabBtn");
 const compareBar = document.getElementById("compareBar");
 const compareCount = document.getElementById("compareCount");
 const compareModal = document.getElementById("compareModal");
 const compareTableWrap = document.getElementById("compareTableWrap");
+const detailModal = document.getElementById("detailModal");
+const detailTitle = document.getElementById("detailTitle");
+const detailBody = document.getElementById("detailBody");
+const nearbyModal = document.getElementById("nearbyModal");
+const nearbyTitle = document.getElementById("nearbyTitle");
+const nearbyBody = document.getElementById("nearbyBody");
+const wizardResults = document.getElementById("wizardResults");
+
+function getMobileUrl(car, regionSlug) {
+  const base = `https://www.mobile.bg/obiavi/avtomobili-dzhipove/${car.brandSlug}/${car.modelSlug}`;
+  if (regionSlug) {
+    return `${base}/${regionSlug}/ot-${car.yearFrom}/do-${car.yearTo}`;
+  }
+  return `${base}/ot-${car.yearFrom}/do-${car.yearTo}`;
+}
+
+function saveFavs() {
+  try { localStorage.setItem("firstCarFavs", JSON.stringify(favIds)); } catch (e) {}
+  favTabBtn.textContent = `♥ Favorites (${favIds.length})`;
+}
 
 function handleImgError(imgEl, fallbackUrl) {
   if (!imgEl.dataset.triedFallback && fallbackUrl) {
@@ -687,24 +2076,116 @@ function handleImgError(imgEl, fallbackUrl) {
     imgEl.src = fallbackUrl;
   } else {
     imgEl.style.display = "none";
-    imgEl.nextElementSibling.style.display = "flex";
+    if (imgEl.nextElementSibling) imgEl.nextElementSibling.style.display = "flex";
   }
 }
 
+function openNearby(id) {
+  const car = cars.find(c => c.id === id);
+  if (!car) return;
+  nearbyTitle.textContent = `📍 ${car.name} Near Yambol (~100 km)`;
+  nearbyBody.innerHTML = `
+    <p class="nearby-intro">
+      Browse <strong>${car.name} (${car.years})</strong> listings on Mobile.bg in Yambol and the 3 largest neighboring markets within 100 km:
+    </p>
+    <div class="city-list">
+      ${yambolRegions.map(r => `
+        <a class="city-link ${r.primary ? "primary" : ""}" href="${getMobileUrl(car, r.slug)}" target="_blank" rel="noopener noreferrer">
+          <div class="city-meta">
+            <strong>${r.name}</strong>
+            <span>${r.dist} &mdash; ${r.note}</span>
+          </div>
+          <span class="city-go">Open Mobile.bg ↗</span>
+        </a>
+      `).join("")}
+    </div>
+    <a class="all-bg-link" href="${getMobileUrl(car, null)}" target="_blank" rel="noopener noreferrer">
+      Search All of Bulgaria (${car.name} ${car.years}) ↗
+    </a>
+  `;
+  nearbyModal.classList.add("open");
+}
+
+function renderWizard() {
+  const scored = cars.map(car => {
+    let score = 0;
+    let reasons = [];
+
+    if (wizState.gearbox === "auto") {
+      if (car.autoGood) { score += 4; reasons.push("dependable automatic option"); }
+      else { score -= 5; }
+    } else if (wizState.gearbox === "manual") {
+      score += 1;
+    }
+
+    if (wizState.priority === "park") {
+      score += car.scores.park * 2.2;
+      if (car.lengthMm <= 3760) reasons.push(`compact ${car.length} body`);
+    } else if (wizState.priority === "visibility") {
+      score += car.scores.visibility * 2.2;
+      if (car.categories.includes("tall")) reasons.push("high seating & wide glass");
+    } else if (wizState.priority === "reliability") {
+      score += car.scores.reliability * 2.2;
+      reasons.push(`reliability ${car.scores.reliability}/5`);
+    } else if (wizState.priority === "budget") {
+      score += car.scores.cost * 2.0 + (car.priceMin <= 2200 ? 2.5 : 0);
+      reasons.push(`budget-friendly (${car.priceRange})`);
+    }
+
+    if (wizState.usage === "mixed") {
+      if (car.lengthMm >= 3850) { score += 1.6; reasons.push("comfortable on weekend trips"); }
+      if (["spark", "picanto", "aygo", "fiat500"].includes(car.id)) score -= 1.0;
+    } else {
+      if (car.lengthMm <= 3785) { score += 1.2; reasons.push("nimble in city traffic"); }
+    }
+
+    return { car, score, reason: reasons.slice(0, 2).join(" • ") || car.subtitle };
+  }).sort((a, b) => b.score - a.score).slice(0, 3);
+
+  wizardResults.innerHTML = scored.map((item, idx) => `
+    <div class="wiz-match">
+      <div class="wiz-match-head">
+        <strong>${item.car.name}</strong>
+        <span class="wiz-rank">#${idx + 1} Match</span>
+      </div>
+      <p>${item.reason.charAt(0).toUpperCase() + item.reason.slice(1)}.</p>
+      <div class="wiz-match-links">
+        <button onclick="openDetail('${item.car.id}')">Full Details &rarr;</button>
+        <button class="yambol-mini" onclick="openNearby('${item.car.id}')">📍 Near Yambol</button>
+      </div>
+    </div>
+  `).join("");
+}
+
 function renderCars() {
-  const filtered = cars.filter(car => {
-    const matchesFilter = activeFilter === "all" || car.categories.includes(activeFilter);
+  let list = cars.filter(car => {
+    let matchesFilter = true;
+    if (activeFilter === "favorites") matchesFilter = favIds.includes(car.id);
+    else if (activeFilter !== "all") matchesFilter = car.categories.includes(activeFilter);
+
     const q = searchQuery.trim().toLowerCase();
     const matchesSearch = !q ||
       car.name.toLowerCase().includes(q) ||
       car.subtitle.toLowerCase().includes(q) ||
       car.why.toLowerCase().includes(q) ||
-      car.engine.toLowerCase().includes(q);
+      car.engine.toLowerCase().includes(q) ||
+      car.style.toLowerCase().includes(q);
     return matchesFilter && matchesSearch;
   });
 
-  carGrid.innerHTML = filtered.map(car => {
+  if (sortBy === "park") list = [...list].sort((a, b) => a.lengthMm - b.lengthMm);
+  else if (sortBy === "fuel") list = [...list].sort((a, b) => a.fuelAvg - b.fuelAvg);
+  else if (sortBy === "price") list = [...list].sort((a, b) => a.priceMin - b.priceMin);
+  else if (sortBy === "reliability") list = [...list].sort((a, b) => b.scores.reliability - a.scores.reliability);
+
+  if (!list.length) {
+    carGrid.innerHTML = `<div class="empty-state"><strong>No cars match your current filter.</strong><br>Try tapping "All 20 Cars" or clearing your search box.</div>`;
+    return;
+  }
+
+  carGrid.innerHTML = list.map(car => {
     const isSelected = selectedIds.includes(car.id);
+    const isFav = favIds.includes(car.id);
     return `
       <article class="card">
         <div class="img-wrap">
@@ -715,31 +2196,46 @@ function renderCars() {
             <span>${car.years} &bull; ${car.style}</span>
           </div>
           <span class="year-pill">${car.years}</span>
-          <span class="style-pill">${car.style}</span>
+          <span class="price-pill">${car.priceRange}</span>
+          <span class="safety-pill">${car.safety}</span>
+          <button class="fav-btn ${isFav ? "active" : ""}" onclick="toggleFav('${car.id}')" title="Save to favorites" aria-label="Save to favorites">
+            ${isFav ? "♥" : "♡"}
+          </button>
         </div>
         <div class="card-body">
-          <h2 class="card-title">${car.name}</h2>
+          <div class="card-head">
+            <h2 class="card-title">${car.name}</h2>
+            <span class="style-tag">${car.style}</span>
+          </div>
           <div class="card-sub">${car.subtitle}</div>
           <p class="why-text">${car.why}</p>
           <div class="specs">
             <div class="spec-item"><span>Best Engine</span><strong>${car.engine}</strong></div>
-            <div class="spec-item"><span>Gearbox</span><strong>${car.gearbox}</strong></div>
-            <div class="spec-item"><span>Length</span><strong>${car.length}</strong></div>
-            <div class="spec-item"><span>BG Tax / GO</span><strong>${car.taxTier}</strong></div>
+            <div class="spec-item"><span>Avg. Fuel</span><strong>${car.fuelAvg} L / 100 km</strong></div>
+            <div class="spec-item"><span>Length &amp; Turn</span><strong>${car.length}</strong></div>
+            <div class="spec-item"><span>Trunk Space</span><strong>${car.trunk.split(" ")[0]} L</strong></div>
           </div>
-          <div class="tip-box"><strong>Buyer Tip:</strong> ${car.tip}</div>
+          <div class="tip-box"><strong>Quick Tip:</strong> ${car.tip}</div>
           <div class="card-actions">
-            <button class="btn btn-compare ${isSelected ? "selected" : ""}" onclick="toggleCompare('${car.id}')">
-              ${isSelected ? "✓ Selected" : "+ Compare"}
+            <button class="btn btn-yambol" onclick="openNearby('${car.id}')">
+              📍 Listings Near Yambol (~100 km)
             </button>
-            <a class="btn btn-mobile" href="${car.mobileUrl}" target="_blank" rel="noopener noreferrer">
-              View on Mobile.bg ↗
-            </a>
+            <button class="btn btn-details" onclick="openDetail('${car.id}')">Full Details</button>
+            <button class="btn btn-compare ${isSelected ? "selected" : ""}" onclick="toggleCompare('${car.id}')">
+              ${isSelected ? "✓ Comparing" : "+ Compare"}
+            </button>
           </div>
         </div>
       </article>
     `;
   }).join("");
+}
+
+function toggleFav(id) {
+  if (favIds.includes(id)) favIds = favIds.filter(x => x !== id);
+  else favIds.push(id);
+  saveFavs();
+  renderCars();
 }
 
 function toggleCompare(id) {
@@ -765,11 +2261,99 @@ function updateCompareBar() {
   }
 }
 
+function renderScoreBar(label, val) {
+  const pct = Math.round((val / 5) * 100);
+  return `
+    <div>
+      <div class="score-item-top"><span>${label}</span><span>${val.toFixed(1)} / 5</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:${pct}%"></div></div>
+    </div>
+  `;
+}
+
+function openDetail(id) {
+  const car = cars.find(c => c.id === id);
+  if (!car) return;
+  const isFav = favIds.includes(car.id);
+  detailTitle.textContent = `${car.name} (${car.years})`;
+  detailBody.innerHTML = `
+    <img class="detail-hero" src="${car.img}" alt="${car.name}" referrerpolicy="no-referrer"
+         onerror="if(!this.dataset.f){this.dataset.f=1;this.src='${car.fallbackImg}';}" />
+    <div class="score-grid">
+      ${renderScoreBar("Parking Ease", car.scores.park)}
+      ${renderScoreBar("Visibility", car.scores.visibility)}
+      ${renderScoreBar("Reliability", car.scores.reliability)}
+      ${renderScoreBar("Low Running Cost", car.scores.cost)}
+    </div>
+    <div class="detail-specs">
+      <div class="detail-spec-box"><span>Est. Bulgaria Price</span><strong>${car.priceRange}</strong></div>
+      <div class="detail-spec-box"><span>Fuel Consumption</span><strong>${car.fuelDetail}</strong></div>
+      <div class="detail-spec-box"><span>Engine &amp; Timing</span><strong>${car.engine} &bull; ${car.timing}</strong></div>
+      <div class="detail-spec-box"><span>Gearbox</span><strong>${car.gearbox}</strong></div>
+      <div class="detail-spec-box"><span>Turning Circle</span><strong>${car.turningCircle}</strong></div>
+      <div class="detail-spec-box"><span>Trunk &amp; Safety</span><strong>${car.trunk} &bull; ${car.safety}</strong></div>
+    </div>
+    <div class="cost-strip">
+      <h4>Estimated Annual Ownership Costs in Bulgaria</h4>
+      <div class="cost-items">
+        <div><span>Municipal Road Tax</span><strong>${car.annualCost.tax}</strong></div>
+        <div><span>GO Liability Insurance</span><strong>${car.annualCost.insurance}</strong></div>
+        <div><span>Annual Oil &amp; Filters</span><strong>${car.annualCost.service}</strong></div>
+      </div>
+    </div>
+    <div class="pros-cons">
+      <div class="pc-box pros">
+        <h4>✓ Strengths</h4>
+        <ul>${car.pros.map(p => `<li>${p}</li>`).join("")}</ul>
+      </div>
+      <div class="pc-box cons">
+        <h4>✕ Keep in Mind</h4>
+        <ul>${car.cons.map(c => `<li>${c}</li>`).join("")}</ul>
+      </div>
+    </div>
+    <div class="inspect-box">
+      <strong>What to Check When Inspecting This Model:</strong> ${car.check}
+    </div>
+    <div class="detail-footer">
+      <button class="btn btn-compare" onclick="toggleFav('${car.id}'); openDetail('${car.id}');">
+        ${isFav ? "♥ Saved in Favorites" : "♡ Save to Favorites"}
+      </button>
+      <button class="btn btn-yambol" style="grid-column:auto;" onclick="detailModal.classList.remove('open'); openNearby('${car.id}');">
+        📍 Listings Near Yambol (~100 km)
+      </button>
+    </div>
+  `;
+  detailModal.classList.add("open");
+}
+
+// Event Listeners
+document.querySelectorAll(".wiz-options").forEach(group => {
+  group.addEventListener("click", (e) => {
+    if (!e.target.classList.contains("wiz-btn")) return;
+    group.querySelectorAll(".wiz-btn").forEach(b => b.classList.remove("active"));
+    e.target.classList.add("active");
+    wizState[group.dataset.q] = e.target.dataset.val;
+    renderWizard();
+  });
+});
+
+document.getElementById("toggleWizardBtn").addEventListener("click", (e) => {
+  const body = document.getElementById("wizardBody");
+  const hidden = body.style.display === "none";
+  body.style.display = hidden ? "block" : "none";
+  e.target.textContent = hidden ? "Hide Matcher" : "Show Matcher";
+});
+
 document.getElementById("filterTabs").addEventListener("click", (e) => {
   if (!e.target.classList.contains("tab")) return;
   document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
   e.target.classList.add("active");
   activeFilter = e.target.dataset.filter;
+  renderCars();
+});
+
+document.getElementById("sortSelect").addEventListener("change", (e) => {
+  sortBy = e.target.value;
   renderCars();
 });
 
@@ -791,28 +2375,33 @@ document.getElementById("openCompareBtn").addEventListener("click", () => {
     <table>
       <tr>
         <th>Model</th>
-        ${chosen.map(c => `<td><img class="modal-thumb" src="${c.img}" alt="${c.name}" referrerpolicy="no-referrer" onerror="this.src='${c.fallbackImg}'" /><strong>${c.name}</strong><br><small>${c.years}</small></td>`).join("")}
+        ${chosen.map(c => `<td><img class="modal-thumb" src="${c.img}" alt="${c.name}" referrerpolicy="no-referrer" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='${c.fallbackImg}';}" /><strong>${c.name}</strong><br><small>${c.years} &bull; ${c.safety}</small></td>`).join("")}
       </tr>
-      <tr><th>Body Style</th>${chosen.map(c => `<td>${c.style}</td>`).join("")}</tr>
-      <tr><th>Best Engine</th>${chosen.map(c => `<td>${c.engine}</td>`).join("")}</tr>
+      <tr><th>Est. BG Price</th>${chosen.map(c => `<td><strong>${c.priceRange}</strong></td>`).join("")}</tr>
+      <tr><th>Engine &amp; Timing</th>${chosen.map(c => `<td>${c.engine}<br><small>${c.timing}</small></td>`).join("")}</tr>
       <tr><th>Gearbox</th>${chosen.map(c => `<td>${c.gearbox}</td>`).join("")}</tr>
-      <tr><th>Length</th>${chosen.map(c => `<td>${c.length}</td>`).join("")}</tr>
-      <tr><th>BG Tax / GO</th>${chosen.map(c => `<td>${c.taxTier}</td>`).join("")}</tr>
-      <tr><th>Why It Fits</th>${chosen.map(c => `<td>${c.why}</td>`).join("")}</tr>
-      <tr><th>Buyer Tip</th>${chosen.map(c => `<td>${c.tip}</td>`).join("")}</tr>
+      <tr><th>Fuel Economy</th>${chosen.map(c => `<td>${c.fuelDetail}</td>`).join("")}</tr>
+      <tr><th>Length &amp; Turn</th>${chosen.map(c => `<td>${c.length}<br><small>${c.turningCircle}</small></td>`).join("")}</tr>
+      <tr><th>Trunk</th>${chosen.map(c => `<td>${c.trunk}</td>`).join("")}</tr>
+      <tr><th>Est. Annual Cost</th>${chosen.map(c => `<td>Tax: ${c.annualCost.tax}<br>GO: ${c.annualCost.insurance}<br>Oil: ${c.annualCost.service}</td>`).join("")}</tr>
+      <tr><th>Scores (out of 5)</th>${chosen.map(c => `<td>Park: ${c.scores.park} &bull; View: ${c.scores.visibility}<br>Reliab: ${c.scores.reliability} &bull; Cost: ${c.scores.cost}</td>`).join("")}</tr>
+      <tr><th>Key Check</th>${chosen.map(c => `<td>${c.check}</td>`).join("")}</tr>
     </table>
   `;
   compareModal.classList.add("open");
 });
 
-document.getElementById("closeModalBtn").addEventListener("click", () => {
-  compareModal.classList.remove("open");
-});
+document.getElementById("closeCompareBtn").addEventListener("click", () => compareModal.classList.remove("open"));
+compareModal.addEventListener("click", (e) => { if (e.target === compareModal) compareModal.classList.remove("open"); });
 
-compareModal.addEventListener("click", (e) => {
-  if (e.target === compareModal) compareModal.classList.remove("open");
-});
+document.getElementById("closeDetailBtn").addEventListener("click", () => detailModal.classList.remove("open"));
+detailModal.addEventListener("click", (e) => { if (e.target === detailModal) detailModal.classList.remove("open"); });
 
+document.getElementById("closeNearbyBtn").addEventListener("click", () => nearbyModal.classList.remove("open"));
+nearbyModal.addEventListener("click", (e) => { if (e.target === nearbyModal) nearbyModal.classList.remove("open"); });
+
+saveFavs();
+renderWizard();
 renderCars();
 </script>
 </body>
